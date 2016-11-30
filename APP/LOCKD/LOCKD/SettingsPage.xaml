@@ -4,4 +4,22 @@
 		x:Class="LOCKD.SettingsPage"
 		Title="Settings"
 		BackgroundColor="{StaticResource backgroundColor}" >
+	<StackLayout>
+		<Label Text="ACCOUNT" Style="{StaticResource lblStyle}" />
+		<StackLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="NAME" HorizontalOptions="StartAndExpand" />
+			<Entry Text="John Doe" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="PAIR CODE" HorizontalOptions="StartAndExpand" />
+			<Entry Text="1111" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<Label Text="PUSH NOTIFICATIONS" Style="{StaticResource lblStyle}" />
+		<StackLayout BackgroundColor="{StaticResource menuBackground}">
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}">
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}">
+		</StackLayout>
+	</StackLayout>
 </ContentPage>

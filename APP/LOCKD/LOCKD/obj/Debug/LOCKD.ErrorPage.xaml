@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LOCKD.ErrorPage"
+		Title="Error report">
+	<StackLayout BackgroundColor="{StaticResource backgroundColor}">
+		<Label Style="{StaticResource lblErrorStyle}" Text="What error did you encounter?" HorizontalOptions="Center" />
+		<Editor BackgroundColor="{StaticResource menuBackground}" />
+		<Label Style="{StaticResource lblErrorStyle}" Text="Email" />
+		<Entry BackgroundColor="{StaticResource menuBackground}" />
+		<Button Text="Submit" Style="{StaticResource errorBtnStyle}" Clicked="submit_Button_OnClicked" />
+	</StackLayout>
+</ContentPage>

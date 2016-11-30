@@ -1,8 +1,7 @@
-﻿<Properties StartupConfiguration="{280EAEF4-9128-4727-8400-A755F1A13463}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="LOCKD/MenuPage.xaml.cs">
+﻿<Properties StartupConfiguration="{34147E5B-C417-4FE4-9F54-14E5457432C1}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="LOCKD/LOCKDPage.xaml.cs" Line="14" Column="17" />
-      <File FileName="LOCKD/MenuPage.xaml.cs" Line="13" Column="19" />
+      <File FileName="LOCKD/LocationPage.xaml.cs" Line="14" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

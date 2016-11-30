@@ -133,6 +133,8 @@ class MonoPackageManager_Resources {
 		"System.IO.dll",
 		"System.Dynamic.Runtime.dll",
 		"System.Text.RegularExpressions.dll",
+		"Xamarin.Forms.GoogleMaps.dll",
+		"System.Resources.ResourceManager.dll",
 		"System.Diagnostics.Tools.dll",
 	};
 	public static final String[] Dependencies = new String[]{

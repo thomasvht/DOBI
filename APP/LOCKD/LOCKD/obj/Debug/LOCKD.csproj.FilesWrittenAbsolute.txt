@@ -28,3 +28,7 @@
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.Images.facebook.png
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.Images.settings.png
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.Images.twitter.png
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.ErrorPage.xaml
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.ErrorPage.xaml.g.cs
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Xamarin.Forms.Maps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Xamarin.Forms.GoogleMaps.dll

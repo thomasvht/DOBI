@@ -35,5 +35,15 @@ namespace LOCKD
 		{
 			await Navigation.PushAsync(new AlertsPage());
 		}
+
+		private async void Settings_Button_OnClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new SettingsPage());
+		}
+
+		private async void Error_Button_OnClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ErrorPage());
+		}
 	}
 }

@@ -5,7 +5,7 @@
 			 x:Class="LOCKD.LOCKDPage"
 			 Title="Home">
 	<StackLayout BackgroundColor="{StaticResource backgroundColor}">
-		<Button x:Name="btnState" Clicked="Button_OnClicked" />
+		<Button x:Name="btnState" BackgroundColor="{StaticResource backgroundColor}" Clicked="Button_OnClicked" />
 		<Label Style="{StaticResource lblStyle}" x:Name="stateScreenlbl" HorizontalOptions="Center" />
 	</StackLayout>
 </ContentPage>

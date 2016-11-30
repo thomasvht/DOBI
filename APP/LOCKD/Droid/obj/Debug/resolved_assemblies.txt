@@ -42,4 +42,6 @@
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.IO.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Dynamic.Runtime.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Text.RegularExpressions.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.GoogleMaps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Resources.ResourceManager.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Diagnostics.Tools.dll

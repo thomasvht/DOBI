@@ -12,8 +12,8 @@
 				<Button Text="Invite" Style="{StaticResource menuBtnStyle}" Clicked="Invite_Button_OnClicked" />
 				<Button Text="Alerts" Style="{StaticResource menuBtnStyle}" Clicked="Alerts_Button_OnClicked" />
 				<RelativeLayout>
-					<Button x:Name="settingBtnSettings" Margin="25,220,0,0" Style="{StaticResource settingBtnStyle}" />
-					<Button x:Name="settingBtnError" Margin="85,220,0,0" Style="{StaticResource settingBtnStyle}" />
+					<Button x:Name="settingBtnSettings" Margin="25,220,0,0" Style="{StaticResource settingBtnStyle}" Clicked="Settings_Button_OnClicked" />
+					<Button x:Name="settingBtnError" Margin="85,220,0,0" Style="{StaticResource settingBtnStyle}" Clicked="Error_Button_OnClicked" />
 					<Button x:Name="settingBtnFacebook" Margin="145, 220, 0, 0" Style="{StaticResource settingBtnStyle}" />
 					<Button x:Name="settingBtnTwitter" Margin="205, 220, 0, 0" Style="{StaticResource settingBtnStyle}" />
 				</RelativeLayout>
