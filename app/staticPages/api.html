@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Lock'D API</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Lock'D API</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="#bike">Bike</a></li>
+                    <li><a href="#maintenance">Maintenance</a></li>
+                    <li><a href="#session">Session</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="col-lg-8 col-lg-offset-2" style="margin-top: 70px">
+        <h1 id="bike">Bike</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add new bike <span class="label label-default">/api/bike/add</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This adds a new bike to the database. This is only for the bike, the user will not be added.</dd>
+
+                    <dt>Method</dt>
+                    <dd>POST</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/bike/add</dd>
+
+                    <dt>Data</dt>
+                    <dd>
+                        <pre>
+{
+    "Owner": "Enter owner id"
+}                        </pre>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add new user to a bike <span class="label label-default">/api/bike/addUser</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This adds a new user to a pre-configured bike.</dd>
+
+                    <dt>Method</dt>
+                    <dd>POST</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/bike/addUser</dd>
+
+                    <dt>Data</dt>
+                    <dd>
+                        <pre>
+{
+    "user": "Enter owner id",
+    "unlockCode": "Unlock id"
+}                        </pre>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Remove user from a bike <span class="label label-default">/api/bike/removeUser/:bike_id</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This removes a user from a bike.</dd>
+
+                    <dt>Method</dt>
+                    <dd>POST</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/bike/removeUser/:bike_id</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get bike list by owner <span class="label label-default">/api/bike/byOwner/:owner_id</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This gets a list of all the bikes from a specified owner.</dd>
+
+                    <dt>Method</dt>
+                    <dd>GET</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/bike/addUser</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get bike list by user <span class="label label-default">/api/byUser/:user_id</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This gets a list of all the bikes from a specified user.</dd>
+
+                    <dt>Method</dt>
+                    <dd>GET</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/byUser/:user_id</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get a single bike <span class="label label-default">/api/single/:bike_id</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This returns a single bike.</dd>
+
+                    <dt>Method</dt>
+                    <dd>GET</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/single/:bike_id</dd>
+                </dl>
+            </div>
+        </div>
+
+        <h1 id="maintenance">Maintenance</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add new maintenance <span class="label label-default">/api/maintenance/add</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This adds a new maintenance to the bike.</dd>
+
+                    <dt>Method</dt>
+                    <dd>POST</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/maintenance/add</dd>
+
+                    <dt>Data</dt>
+                    <dd>
+                        <pre>
+{
+    "bikeId": "The bike id",
+    "mechanic": "Name of the mechanic",
+    "description": "The description,
+    "price": "The price"
+}                        </pre>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get list of all maintained <span class="label label-default">/api/maintenance/:bike_id</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This is a list of all entries</dd>
+
+                    <dt>Method</dt>
+                    <dd>GET</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/maintenance/:bike_id</dd>
+                </dl>
+            </div>
+        </div>
+
+        <h1 id="session">Session</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add new session <span class="label label-default">/api/session/add</span></h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>What?</dt>
+                    <dd>This adds a new session.</dd>
+
+                    <dt>Method</dt>
+                    <dd>POST</dd>
+
+                    <dt>Url</dt>
+                    <dd>/api/session/add</dd>
+
+                    <dt>Data</dt>
+                    <dd>
+                        <pre>
+{
+    "owner": "The id of the owner of the bike",
+    "user": "The id of the user of the bike",
+    "bikeId": "The id of the bike",
+    "dateFrom": "The date of the start of the session",
+    "dateTo": "The end date of the session"
+}                        </pre>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
