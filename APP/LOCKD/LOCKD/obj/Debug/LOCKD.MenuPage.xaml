@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:LOCKD;assembly=LOCKD"
+		x:Class="LOCKD.MenuPage"
+		Title="Home">
+	<MasterDetailPage.Master>
+		<ContentPage Title="Menu">
+			<StackLayout Orientation="Vertical" BackgroundColor="{StaticResource menuBackground}" Padding="0,20,0,0">
+				<Button Text="Location" Style="{StaticResource menuBtnStyle}" Clicked="Location_Button_OnClicked" />
+				<Button Text="Sessions" Style="{StaticResource menuBtnStyle}" Clicked="Sessions_Button_OnClicked" />
+				<Button Text="Invite" Style="{StaticResource menuBtnStyle}" Clicked="Invite_Button_OnClicked" />
+				<Button Text="Alerts" Style="{StaticResource menuBtnStyle}" Clicked="Alerts_Button_OnClicked" />
+				<RelativeLayout>
+					<Button x:Name="settingBtnSettings" Margin="25,220,0,0" Style="{StaticResource settingBtnStyle}" />
+					<Button x:Name="settingBtnError" Margin="85,220,0,0" Style="{StaticResource settingBtnStyle}" />
+					<Button x:Name="settingBtnFacebook" Margin="145, 220, 0, 0" Style="{StaticResource settingBtnStyle}" />
+					<Button x:Name="settingBtnTwitter" Margin="205, 220, 0, 0" Style="{StaticResource settingBtnStyle}" />
+				</RelativeLayout>
+			</StackLayout>
+		</ContentPage>
+	</MasterDetailPage.Master>
+		<MasterDetailPage.Detail>
+		<local:LOCKDPage />
+	</MasterDetailPage.Detail>
+</MasterDetailPage>

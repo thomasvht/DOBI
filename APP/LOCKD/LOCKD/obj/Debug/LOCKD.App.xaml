@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LOCKD.App">
+	<Application.Resources>
+		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<Color x:Key="textColor">#BCE7FD</Color>
+			<Color x:Key="backgroundColor">#234567</Color>
+			<Color x:Key="menuBackground">#BCE7FD</Color>
+			<Color x:Key="menuTextColor">#234567</Color>
+			<Color x:Key="settingIconColor">#F2C14E</Color>
+            <Style x:Key="lblStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="{StaticResource textColor}" />
+            </Style>
+            <Style x:Key="menuBtnStyle" TargetType="Button">
+				<Setter Property="TextColor" Value="{StaticResource menuTextColor}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource menuBackground}" />
+			</Style>
+			<Style x:Key="settingBtnStyle" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="{StaticResource menuBackground}" />
+				<Setter Property="WidthRequest" Value="50" />
+				<Setter Property="HeightRequest" Value="60" />
+			</Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

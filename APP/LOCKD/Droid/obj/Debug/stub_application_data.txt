@@ -1,0 +1,2 @@
+android.app.Application
+com.howest.nmct.lock_d

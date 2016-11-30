@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{280EAEF4-9128-4727-8400-A755F1A13463}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LOCKD/MenuPage.xaml.cs">
+    <Files>
+      <File FileName="LOCKD/LOCKDPage.xaml.cs" Line="14" Column="17" />
+      <File FileName="LOCKD/MenuPage.xaml.cs" Line="13" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LOCKD.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D339C2D6-D5CB-40EF-BF4B-DE3FBEBEE73B" />
+  <MonoDevelop.Ide.ItemProperties.LOCKD.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+</Properties>
