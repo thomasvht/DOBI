@@ -6,20 +6,26 @@
 		BackgroundColor="{StaticResource backgroundColor}" >
 	<StackLayout>
 		<Label Text="ACCOUNT" Style="{StaticResource lblStyle}" />
-		<StackLayout BackgroundColor="{StaticResource menuBackground}">
-			<Label Text="NAME" HorizontalOptions="StartAndExpand" />
-			<Entry Text="John Doe" HorizontalOptions="EndAndExpand" />
-		</StackLayout>
-		<StackLayout BackgroundColor="{StaticResource menuBackground}">
-			<Label Text="PAIR CODE" HorizontalOptions="StartAndExpand" />
+		<RelativeLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="NAME" Style="{StaticResource lblBoxStyle}" />
+			<Entry Text="John Doe" />
+		</RelativeLayout>
+		<RelativeLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="PAIR CODE" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
 			<Entry Text="1111" HorizontalOptions="EndAndExpand" />
-		</StackLayout>
+		</RelativeLayout>
 		<Label Text="PUSH NOTIFICATIONS" Style="{StaticResource lblStyle}" />
-		<StackLayout BackgroundColor="{StaticResource menuBackground}">
-		</StackLayout>
-		<StackLayout BackgroundColor="{StaticResource menuBackground}">
-		</StackLayout>
-		<StackLayout BackgroundColor="{StaticResource menuBackground}">
-		</StackLayout>
+		<RelativeLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="MOVEMENT" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</RelativeLayout>
+		<RelativeLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="START SESSION" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</RelativeLayout>
+		<RelativeLayout BackgroundColor="{StaticResource menuBackground}">
+			<Label Text="END SESSION" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</RelativeLayout>
 	</StackLayout>
 </ContentPage>

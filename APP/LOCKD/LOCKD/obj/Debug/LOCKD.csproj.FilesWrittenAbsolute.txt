@@ -32,3 +32,7 @@
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/obj/Debug/LOCKD.ErrorPage.xaml.g.cs
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Xamarin.Forms.Maps.dll
 /Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Xamarin.Forms.GoogleMaps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Microsoft.Practices.ServiceLocation.dll
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/Guards.dll
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/CrossPlatformLibrary.dll
+/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/CrossPlatformLibrary.Geolocation.dll

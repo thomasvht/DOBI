@@ -12,7 +12,7 @@ namespace LOCKD
 			InitializeComponent();
 		}
 
-		private async void submit_Button_OnClicked(object sender, EventArgs e)
+		private void submit_Button_OnClicked(object sender, EventArgs e)
 		{
 			//De bedoeling is om de velden te clearen en een pop-up bericht te laten tonen dat je error goed is verzonden.
 		}

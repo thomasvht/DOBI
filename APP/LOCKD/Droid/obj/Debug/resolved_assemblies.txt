@@ -18,6 +18,11 @@
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.Platform.Android.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.Platform.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.Xaml.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.GooglePlayServices.Basement.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.GooglePlayServices.Base.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.GooglePlayServices.Maps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.Maps.Android.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.Maps.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/LOCKD.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/mscorlib.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Net.Http.dll
@@ -42,6 +47,5 @@
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.IO.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Dynamic.Runtime.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Text.RegularExpressions.dll
-/Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/Xamarin.Forms.GoogleMaps.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Resources.ResourceManager.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/obj/Debug/android/assets/System.Diagnostics.Tools.dll

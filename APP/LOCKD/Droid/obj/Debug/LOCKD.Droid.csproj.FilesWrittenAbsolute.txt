@@ -36,3 +36,9 @@
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.Forms.Xaml.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/LOCKD.dll
 /Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/LOCKD.dll.mdb
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.Forms.GoogleMaps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.Forms.Maps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.GooglePlayServices.Basement.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.GooglePlayServices.Base.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.GooglePlayServices.Maps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/Droid/bin/Debug/Xamarin.Forms.Maps.Android.dll

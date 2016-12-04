@@ -40,6 +40,10 @@
 	-r \
 	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
+	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.Maps.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
+	-r \
+	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.Maps.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
+	-r \
 	/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/LOCKD.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
@@ -313,6 +317,10 @@
 	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
 	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	-r \
+	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.Maps.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll \
+	-r \
+	/Users/thomasvanhoutte/Projects/LOCKD/packages/Xamarin.Forms.Maps.2.3.3.168/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll \
 	-r \
 	/Users/thomasvanhoutte/Projects/LOCKD/LOCKD/bin/Debug/LOCKD.dll \
 	--target-framework \

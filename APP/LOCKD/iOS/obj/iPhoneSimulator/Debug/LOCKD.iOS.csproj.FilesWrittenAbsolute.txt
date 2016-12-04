@@ -19,3 +19,6 @@
 /Users/thomasvanhoutte/Projects/LOCKD/iOS/obj/iPhoneSimulator/Debug/LOCKD.iOS.Resources.facebook.png
 /Users/thomasvanhoutte/Projects/LOCKD/iOS/obj/iPhoneSimulator/Debug/LOCKD.iOS.Resources.settings.png
 /Users/thomasvanhoutte/Projects/LOCKD/iOS/obj/iPhoneSimulator/Debug/LOCKD.iOS.Resources.twitter.png
+/Users/thomasvanhoutte/Projects/LOCKD/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.GoogleMaps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Maps.dll
+/Users/thomasvanhoutte/Projects/LOCKD/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Maps.iOS.dll

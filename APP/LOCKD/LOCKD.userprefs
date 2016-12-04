@@ -1,7 +1,8 @@
-﻿<Properties StartupConfiguration="{34147E5B-C417-4FE4-9F54-14E5457432C1}|Default">
+﻿<Properties StartupConfiguration="{280EAEF4-9128-4727-8400-A755F1A13463}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="LOCKD/LocationPage.xaml.cs" Line="14" Column="26" />
+      <File FileName="LOCKD/LocationPage.xaml.cs" Line="18" Column="33" />
+      <File FileName="LOCKD/App.xaml" Line="20" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -10,6 +11,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.LOCKD.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D339C2D6-D5CB-40EF-BF4B-DE3FBEBEE73B" />
-  <MonoDevelop.Ide.ItemProperties.LOCKD.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.LOCKD.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1A591D6D-EB05-403B-BDB2-B6B6B6CF4078" />
+  <MonoDevelop.Ide.ItemProperties.LOCKD.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
 </Properties>

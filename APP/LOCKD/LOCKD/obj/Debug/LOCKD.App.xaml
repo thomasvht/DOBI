@@ -15,6 +15,11 @@
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="TextColor" Value="{StaticResource textColor}" />
             </Style>
+			<Style x:Key="lblBoxStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="{StaticResource menuTextColor}" />
+            </Style>
             <Style x:Key="menuBtnStyle" TargetType="Button">
 				<Setter Property="TextColor" Value="{StaticResource menuTextColor}" />
 				<Setter Property="BackgroundColor" Value="{StaticResource menuBackground}" />
@@ -29,8 +34,7 @@
 				<Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}" />
 			</Style>
 			<Style x:Key="lblErrorStyle" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="25" />
+				<Setter Property="Font" Value="Bold, 25" />
                 <Setter Property="TextColor" Value="{StaticResource textColor}" />
             </Style>
         </ResourceDictionary>
