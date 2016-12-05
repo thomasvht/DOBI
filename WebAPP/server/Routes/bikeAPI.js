@@ -3,11 +3,12 @@
  */
 
 const router = require('express').Router();
-let Bike     = require('../app/models/bike');
+let Bike     = require('../models/bike');
 
 router.route("/add").post(function (req, res) {
     let bike = new Bike();
 
+    bike.LockId = req.body.LockId;
     bike.Owner = req.body.owner;
 
     bike.save(function(err) {

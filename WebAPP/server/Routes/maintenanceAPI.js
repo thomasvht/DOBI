@@ -3,7 +3,7 @@
  */
 
 const router = require('express').Router();
-let Maintenance     = require('../app/models/maintenance');
+let Maintenance     = require('../models/maintenance');
 
 router.route("/add").post(function (req, res) {
     let maintenance = new Maintenance();

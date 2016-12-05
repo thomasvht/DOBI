@@ -1,0 +1,142 @@
+@import "_variables.scss";
+
+body{
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+html, body {
+  height:100%;
+  width:100%;
+  display:table;
+}
+
+.loader{
+  text-align: center;
+}
+
+login, register, .loader{
+  height:100vh;
+  width: 100vw;
+  background-color: $mainColor1;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+main{
+  padding-top: 70px;
+}
+
+/************** PageBlock ************** */
+.page-block-primary{
+  border: 4px solid $mainColor2;
+  text-align: center;
+  padding: 50px;
+}
+
+.page-block_H1{
+  color: $mainColor2;
+  font-size: 88px;
+  font-weight: 900;
+}
+
+.page-block_H2{
+  color: $mainColor2;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.page-block_textInput{
+  background-color: $mainColor1;
+  font-size: 18px;
+  border: none;
+  border-bottom: 3px solid white;
+  color: #FFFFFF;
+  margin: 25px auto;
+  width: 100%;
+}
+
+.page-block_nameInput{
+  display: inline;
+  float: right;
+}
+
+.page-block_textInput:focus {
+  border: none;
+  outline: none;
+  border-bottom: 3px solid $mainColor2;
+}
+
+.page-block_textInput::-webkit-input-placeholder {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.page-block_submitBtn{
+  border-radius: 5px;
+  color: $mainColor1;
+  background-color: $mainColor2;
+  box-shadow:none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 3px 40px;
+  display: block;
+  margin: 15px auto;
+  border-color: $mainColor2;
+}
+
+.page-block_smallLink{
+  display: block;
+  margin: 5px auto;
+  color: #FFF;
+  size: 18px;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.page-block_smallLink:hover{
+  text-decoration: underline;
+  color: #FFF;
+}
+
+.register_first{
+  width: 45%;
+  float: left;
+  margin-right: 10px;
+}
+
+.register_name{
+  width: 50%;
+}
+/************** PageBlock End ************** */
+
+/************** Navbar ************** */
+.nav-bar{
+  background-color: $mainColor1;
+  height: 50px;
+}
+
+.navbar-default .navbar-brand, nav .navbar-nav>li>a {
+  color: $mainColor2;
+}
+
+.navbar-fixed-bottom{
+  background-color: lightgrey;
+  padding-top: 10px;
+}
+
+/************** NavBar End ************** */
+
+/************** Dashboard ************** */
+.dashboard-block{
+  background-color: #F2C14E;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.dashboard-block > span{
+  font-size: 44px;
+}
+
+/************** Dashboard End ************** */

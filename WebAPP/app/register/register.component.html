@@ -1,0 +1,13 @@
+<div class="page-block-primary col-lg-4 col-lg-offset-4">
+    <h1 class="page-block_H1">Register</h1>
+
+    <input type="text" placeholder="Firstname" class="page-block_textInput register_first" [(ngModel)]="firstname">
+    <input type="text" placeholder="Name" class="page-block_textInput register_name" [(ngModel)]="name">
+
+    <input type="email" placeholder="Email" class="page-block_textInput" [(ngModel)]="email">
+
+    <input type="password" placeholder="Password" class="page-block_textInput" [(ngModel)]="password">
+    <input type="password" placeholder="Repeat password" class="page-block_textInput" [(ngModel)]="passwordRepeat">
+
+    <button role="button" class="page-block_submitBtn" (click)="register()">Register</button>
+</div>

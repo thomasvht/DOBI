@@ -2,7 +2,7 @@
  * Created by Sander Verkaemer on 27/11/2016.
  */
 const router = require('express').Router();
-let Session     = require('../app/models/session');
+let Session     = require('../models/session');
 
 router.route("/add").post(function (req, res) {
     let session = new Session();

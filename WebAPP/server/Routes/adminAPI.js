@@ -2,14 +2,15 @@
  * Created by Sander Verkaemer on 27/11/2016.
  */
 const router = require('express').Router();
-let Bike     = require('../app/models/bike');
-let Maintenance     = require('../app/models/maintenance');
-let Session     = require('../app/models/session');
+let Bike     = require('../models/bike');
+let Maintenance     = require('../models/maintenance');
+let Session     = require('../models/session');
 
 router.route("/bike")
     .post(function(req, res) {
         let bike = new Bike();
 
+        bike.LockId = req.body.LockId;
         bike.Owner = req.body.Owner;
         bike.User = req.body.User;
         bike.LastLocation = req.body.LastLocation;
