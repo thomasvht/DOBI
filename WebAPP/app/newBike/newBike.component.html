@@ -1,0 +1,15 @@
+<header></header>
+
+<main>
+    <div class="page-block-primary col-lg-4 col-lg-offset-4">
+        <h1 class="page-block_H1">Add bike</h1>
+
+        <input type="text" placeholder="Bike number" class="page-block_textInput_secondary" [(ngModel)]="number">
+        <input type="text" placeholder="Lock id" class="page-block_textInput_secondary" [(ngModel)]="lockid">
+
+
+        <button role="button" class="page-block_submitBtn" (click)="addNewBike()">Add!</button>
+    </div>
+</main>
+
+<DashboardFooter></DashboardFooter>
