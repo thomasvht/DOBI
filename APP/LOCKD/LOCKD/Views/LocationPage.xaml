@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LOCKD.LocationPage"
+		Title="Location"
+		BackgroundColor="{StaticResource backgroundColor}" >
+	<StackLayout Orientation="Vertical">
+		<maps:Map 
+				x:Name="LocationMap">
+		</maps:Map>
+		<Label x:Name="lblInformation" Style="{StaticResource lblStyle}" />
+		<StackLayout x:Name="stckLayoutUser" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblUser" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblUserAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutLocation" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblLocation" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblLocationAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutState" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblState" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblStateAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

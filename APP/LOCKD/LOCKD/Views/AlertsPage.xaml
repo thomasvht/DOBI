@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LOCKD.AlertsPage"
+		Title="Alerts"
+		BackgroundColor="{StaticResource backgroundColor}">
+	<StackLayout x:Name="stckLayoutAlerts">
+	<StackLayout x:Name="stckLayoutMoved">
+	<Label x:Name="lblMoved" Style="{StaticResource lblStyle}" />
+		<StackLayout x:Name="stckLayoutWhen" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblWhen" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblWhenAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutWhere" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblWhere" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblWhereAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+	</StackLayout>
+	<StackLayout x:Name="stckLayoutStolen">
+	<Label x:Name="lblStolen" Style="{StaticResource lblStyle}" />
+		<StackLayout x:Name="stckLayoutWhenS" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblWhenS" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblWhenAnswerS" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutWhereS" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblWhereS" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblWhereAnswerS" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutStopped" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblStopped" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblStoppedAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout x:Name="stckLayoutLocation" BackgroundColor="{StaticResource menuBackground}">
+			<Label x:Name="lblLocation" HorizontalOptions="StartAndExpand" />
+			<Label x:Name="lblLocationAnswer" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+	</StackLayout>
+	</StackLayout>
+</ContentPage>

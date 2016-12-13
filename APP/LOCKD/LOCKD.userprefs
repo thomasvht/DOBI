@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{280EAEF4-9128-4727-8400-A755F1A13463}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="LOCKD/Views/LoginPage.xaml.cs">
     <Files>
-      <File FileName="LOCKD/LocationPage.xaml.cs" Line="18" Column="33" />
-      <File FileName="LOCKD/App.xaml" Line="20" Column="54" />
+      <File FileName="LOCKD/Views/LoginPage.xaml.cs" Line="57" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

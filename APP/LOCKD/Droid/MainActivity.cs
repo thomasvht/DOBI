@@ -7,21 +7,26 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin;
+using Xamarin.Forms;
+using Xamarin.Forms.Maps;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace LOCKD.Droid
 {
-	[Activity(Label = "LOCKD.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "LOCKD.Droid", Icon = "@drawable/lockd", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
-		protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-			base.OnCreate(bundle);
+			base.OnCreate(savedInstanceState);
 
-			Xamarin.Forms.Forms.Init(this, bundle);
-			Xamarin.FormsMaps.Init(this, bundle);
+			Forms.Init(this, savedInstanceState);
+			FormsMaps.Init(this, savedInstanceState);
+			ImageCircleRenderer.Init();
 
 			LoadApplication(new App());
 		}

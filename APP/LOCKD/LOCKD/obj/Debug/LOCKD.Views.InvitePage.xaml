@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		x:Class="LOCKD.InvitePage"
+		Title="Invite"
+		BackgroundColor="{StaticResource backgroundColor}">
+	<StackLayout x:Name="stckLayoutInvite">
+		<Label x:Name="lblFriends" Style="{StaticResource lblStyle}" />
+		<StackLayout x:Name="stckLayoutContacts">
+			<circleImage:CircleImage x:Name="cImgFirst" />
+			<circleImage:CircleImage x:Name="cImgSecond" />
+			<circleImage:CircleImage x:Name="cImgThird" />
+
+		</StackLayout>
+		<Button x:Name="btnAdd" BackgroundColor="{StaticResource settingIconColor}" />
+	</StackLayout>
+</ContentPage>

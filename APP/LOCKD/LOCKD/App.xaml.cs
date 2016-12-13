@@ -7,7 +7,8 @@ namespace LOCKD
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new MenuPage());
+			//MainPage = new NavigationPage(new MenuPage());
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart()

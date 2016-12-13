@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="LOCKD.LoginPage"
+	BackgroundColor="{StaticResource backgroundColor}">
+	<StackLayout x:Name="stckLogin" >
+		<Label x:Name="lblEmail" Style="{StaticResource lblStyle}" />
+		<Entry x:Name="entEmail" />
+		<Label x:Name="lblPassword" Style="{StaticResource lblStyle}" />
+		<Entry x:Name="entPassword" />
+		<Button x:Name="btnLogin" BackgroundColor="{StaticResource backgroundColor}" Clicked="Button_Login_OnClicked" />
+	</StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="LOCKD.SettingsPage"
+		Title="Settings"
+		BackgroundColor="{StaticResource backgroundColor}" >
+	<StackLayout>
+		<Label Text="ACCOUNT" Style="{StaticResource lblStyle}" />
+		<StackLayout BackgroundColor="{StaticResource menuBackground}" Orientation="Horizontal">
+			<Label Text="NAME" Style="{StaticResource lblBoxStyle}" HorizontalOptions="StartAndExpand" />
+			<Entry Text="John Doe" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}" Orientation="Horizontal">
+			<Label Text="PAIR CODE" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Entry Text="1111" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<Label Text="PUSH NOTIFICATIONS" Style="{StaticResource lblStyle}" />
+		<StackLayout BackgroundColor="{StaticResource menuBackground}" Orientation="Horizontal">
+			<Label Text="MOVEMENT" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}" Orientation="Horizontal">
+			<Label Text="START SESSION" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+		<StackLayout BackgroundColor="{StaticResource menuBackground}" Orientation="Horizontal">
+			<Label Text="END SESSION" HorizontalOptions="StartAndExpand" Style="{StaticResource lblBoxStyle}" />
+			<Switch IsToggled="true" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+	</StackLayout>
+</ContentPage>
