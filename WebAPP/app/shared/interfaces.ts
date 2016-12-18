@@ -1,20 +1,29 @@
 export interface IBike{
+    Number: number,
     LockId: string,
     Owner : string,
-    User : string,
+    User : any,
     LastLocation : string,
-    CurrentStatus : string,
+    inMaintenance : boolean,
     UnlockCode : string
 }
 
 export interface IUser{
-    firstname:string;
-    name:string;
-    email:string;
-    password:string;
+    Firstname:string;
+    Name:string;
+    Email:string;
+    Password:string;
 }
 
 export  interface ILogin{
-    email:string;
-    password:string;
+    Email:string;
+    Password:string;
+}
+
+export  interface  IMaintenance{
+    BikeId:string;
+    Date:string;
+    Mechanic:string;
+    Description:string;
+    Price:number;
 }

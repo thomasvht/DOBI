@@ -12,17 +12,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Sander Verkaemer on 01/12/2016.
  */
 var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
+var router_1 = require('@angular/router');
+var user_service_1 = require('../shared/services/user.service');
 var LoginComponent = (function () {
-    function LoginComponent(dataService) {
-        this.dataService = dataService;
+    function LoginComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
     }
     LoginComponent.prototype.login = function () {
+        var _this = this;
         var user = {
-            email: this.email,
-            password: this.password,
+            Email: this.email,
+            Password: this.password,
         };
-        this.dataService.login(user);
+        this.userService.login(user).subscribe(function (result) {
+            if (result) {
+                if (result.error) {
+                    _this.errorMessage = result.error;
+                }
+                else {
+                    _this.router.navigate(['/dashboard']);
+                }
+            }
+        });
     };
     LoginComponent = __decorate([
         core_1.Component({
@@ -30,7 +42,7 @@ var LoginComponent = (function () {
             selector: 'login',
             templateUrl: 'login.component.html'
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
+        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
     ], LoginComponent);
     return LoginComponent;
 }());

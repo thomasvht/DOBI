@@ -3,7 +3,8 @@
  */
 import { Component } from '@angular/core';
 
-import { DataService } from '../shared/services/data.service';
+import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
 import { IUser } from '../shared/interfaces';
 
 @Component({
@@ -19,22 +20,29 @@ export class RegisterComponent {
     password:string;
     passwordRepeat:string;
 
-    warningMessage:string;
+    errorMessage:string;
 
-    constructor(private dataService: DataService) {
-    }
+    constructor(private userService: UserService, private router: Router) {}
 
     register() {
         if(this.password != this.passwordRepeat){
-            this.warningMessage = "Passwords are not the same!";
+            this.errorMessage = "Passwords are not the same!";
         }else{
             let user : IUser = {
-                firstname: this.firstname,
-                name: this.name,
-                email: this.email,
-                password: this.password,
+                Firstname: this.firstname,
+                Name: this.name,
+                Email: this.email,
+                Password: this.password,
             };
-            this.dataService.register(user);
+            this.userService.register(user).subscribe((result) => {
+                if (result) {
+                    if(result.error){
+                        this.errorMessage = result.error;
+                    }else {
+                        this.router.navigate(['/dashboard']);
+                    }
+                }
+            });
         }
     }
 }

@@ -12,4 +12,8 @@ let FriendRequestSchema   = new Schema({
     Receiver: String
 });
 
+FriendRequestSchema.static('findByReceiver', function (Receiver, callback) {
+    return this.find({ Receiver: Receiver }, callback);
+});
+
 module.exports = mongoose.model('FriendRequest', FriendRequestSchema);

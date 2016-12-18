@@ -12,18 +12,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Sander Verkaemer on 08/12/2016.
  */
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var user_service_1 = require('./services/user.service');
 var LoggedInGuard = (function () {
-    function LoggedInGuard(user) {
+    function LoggedInGuard(user, router) {
         this.user = user;
+        this.router = router;
     }
     LoggedInGuard.prototype.canActivate = function () {
-        console.log("isLoggedIn(): ", this.user.isLoggedIn());
+        if (!this.user.isLoggedIn()) {
+            this.router.navigate(['/login']);
+        }
         return this.user.isLoggedIn();
     };
     LoggedInGuard = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
+        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
     ], LoggedInGuard);
     return LoggedInGuard;
 }());

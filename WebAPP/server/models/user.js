@@ -12,7 +12,8 @@ let UserSchema = new Schema({
     name:String,
     email:String,
     password:String,
-    role: String
+    role: String,
+    friendList: []
 });
 
 UserSchema.pre('save', function (next) {
@@ -30,6 +31,14 @@ UserSchema.pre('save', function (next) {
             next();
         })
     });
+});
+
+UserSchema.static('findByEmail',  function (Email, callback) {
+    return this.findOne({ email: Email}, 'name firstname email', callback);
+});
+
+UserSchema.static('findFriendsByEmail',  function (Email, callback) {
+    return this.find({ email: Email}, 'name email friendList', callback);
 });
 
 UserSchema.methods.toJSON = function () {

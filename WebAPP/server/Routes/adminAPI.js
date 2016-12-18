@@ -5,6 +5,8 @@ const router = require('express').Router();
 let Bike     = require('../models/bike');
 let Maintenance     = require('../models/maintenance');
 let Session     = require('../models/session');
+let User = require('../models/user');
+let jwt = require('jwt-simple');
 
 router.route("/bike")
     .post(function(req, res) {
@@ -24,11 +26,11 @@ router.route("/bike")
         });
     })
     .get(function(req, res) {
-        Bike.find(function(err, locks) {
+        Bike.find(function(err, bikes) {
             if (err)
                 res.send(err);
 
-            res.json(locks);
+            res.json(bikes);
         });
     });
 
@@ -49,4 +51,47 @@ router.route("/session").get(function(req, res) {
         res.json(sessions);
     });
 });
+
+router.route("/user")
+    .post(function (req, res) {
+        let user = req.body;
+
+        let newUser = new User({
+            firstname: user.firstname,
+            name: user.firstname,
+            email: user.email,
+            password: user.password,
+            role: user.role
+        });
+
+        newUser.save(function(err){
+            res.json(genToken(user));
+        });
+    })
+
+    .get(function(req, res) {
+        User.find(function(err, users) {
+            if (err)
+                res.send(err);
+
+            res.json(users);
+        });
+    });
 module.exports = router;
+
+function genToken(user) {
+    let expires = expiresIn(8); // 7 days
+    let token = jwt.encode({
+        exp: expires
+    }, require('../config/secret')());
+
+    return {
+        token: token,
+        expires: expires,
+        user: user
+    };
+}
+function expiresIn(numDays) {
+    let dateObj = new Date();
+    return dateObj.setDate(dateObj.getDate() + numDays);
+}

@@ -21,22 +21,21 @@ var UserService = (function () {
     }
     UserService.prototype.login = function (user) {
         var _this = this;
-        console.log("Login!");
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http
             .post('http://127.0.0.1:5000/login', user, { headers: headers })
             .map(function (res) { return res.json(); })
             .map(function (res) {
-            console.log(res);
             if (res.error) {
                 _this.loggedIn = false;
             }
             else {
-                localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.email }));
+                console.log(res);
+                localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.Email }));
                 _this.loggedIn = true;
             }
-            return res.success;
+            return res;
         });
     };
     UserService.prototype.register = function (user) {
@@ -47,15 +46,14 @@ var UserService = (function () {
             .post('http://127.0.0.1:5000/register', user, headers)
             .map(function (res) { return res.json(); })
             .map(function (res) {
-            console.log(res);
             if (res.error) {
                 _this.loggedIn = false;
             }
             else {
-                localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.email }));
+                localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.Email }));
                 _this.loggedIn = true;
             }
-            return res.success;
+            return res;
         });
     };
     UserService.prototype.logout = function () {

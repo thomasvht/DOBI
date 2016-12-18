@@ -5,11 +5,11 @@ let mongoose     = require('mongoose');
 let Schema       = mongoose.Schema;
 
 let MaintenanceSchema   = new Schema({
-    BikeId: String,
-    Date: Date,
-    Mechanic: String,
-    Description: String,
-    Price: String
+    BikeId: { type : String },
+    Date: { type : Date },
+    Mechanic: { type : String },
+    Description: { type : String },
+    Price: { type : Number }
 });
 
 MaintenanceSchema.static('findByBikeId', function (BikeId, callback) {

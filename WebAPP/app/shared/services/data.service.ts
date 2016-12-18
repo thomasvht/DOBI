@@ -5,46 +5,86 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
-import {IBike, ILogin} from '../interfaces';
-import { IUser } from '../interfaces';
+import {IBike, IMaintenance} from '../interfaces';
 
 @Injectable()
 export class DataService {
 
-
     constructor (private http: Http) {}
 
-    getAdminBikes() : Observable<IBike[]>{
-        return this.http.get('http://localhost:5000/api/admin/bike')
+    getBikesByOwner() : Observable<IBike[]>{
+        return this.http.get('http://localhost:5000/api/bike/byOwner/'+ ReadUserFromLocalStorage(), GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }
 
-    register(user:IUser): void{
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+    addNewBike(number:number,lockid:string,unlockCode:string) : any{
+        let body = {
+            "Number":number,
+            "LockId":lockid,
+            "Owner": ReadUserFromLocalStorage(),
+            "UnlockCode":unlockCode
+        };
 
-        this.http
-            .post('http://127.0.0.1:5000/register', user, options)
-            .subscribe((result) =>{
-                console.log('result',result);
-            });
+        return this.http.post('http://localhost:5000/api/bike/add/', body, GenerateHeaders())
+            .map((resp: Response) => resp.json())
+            .catch(this.handleError);
     }
 
-    login(user:ILogin): void{
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+    getBikeById(id:string): any{
+        return this.http.get('http://localhost:5000/api/bike/single/'+id, GenerateHeaders())
+            .map((resp:Response) => resp.json())
+            .catch(this.handleError);
+    }
 
-        this.http
-            .post('http://127.0.0.1:5000/login', user, options)
-            .subscribe((result) =>{
-                console.log('result',result);
-            });
+    addNewMaintenance(maintenance: IMaintenance) : any{
+        return this.http.post('http://localhost:5000/api/maintenance/add/', maintenance, GenerateHeaders())
+            .map((resp: Response) => resp.json())
+            .catch(this.handleError);
+    }
+
+    getMaintenances(id:string) : Observable<IMaintenance[]>{
+        return this.http.get('http://localhost:5000/api/maintenance/'+id, GenerateHeaders())
+            .map((resp:Response) => resp.json())
+            .catch(this.handleError);
+    }
+
+    toggleMaintenance(id:string):any{
+        return this.http.post('http://localhost:5000/api/bike/toggleInMaintenance/'+id, null, GenerateHeaders())
+            .map((resp: Response) => resp.json())
+            .catch(this.handleError);
+    }
+
+    addUser(id:string, email:string):any{
+        let body = {
+            "Email":email,
+            "BikeId":id
+        };
+        return this.http.post('http://localhost:5000/api/bike/addUser', body, GenerateHeaders())
+            .map((resp: Response) => resp.json())
+            .catch(this.handleError);
     }
 
     handleError(error: any) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }
-    
+}
+
+function GenerateHeaders(){
+    var currentUser = JSON.parse(localStorage.getItem('auth_token'));
+    var token = currentUser.token;
+    var email = currentUser.email;
+
+    let headers = new Headers({
+        'Content-Type': 'application/json',
+        'x-access-token': token,
+        'x-key':email
+    });
+
+    return new RequestOptions({ headers: headers });
+}
+function ReadUserFromLocalStorage(){
+    var currentUser = JSON.parse(localStorage.getItem('auth_token'));
+    return currentUser.email;
 }

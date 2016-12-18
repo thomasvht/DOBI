@@ -19,7 +19,7 @@ var FooterComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'DashboardFooter',
-            template: "\n        <footer>\n            <div class=\"navbar navbar-fixed-bottom\">\n                <div class=\"navbar-inner footer\">\n                    <div class=\"container\">\n                        <footer>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    Created by <a href=\"http://twitter.com/DanWahlin\" target=\"_blank\">@DanWahlin</a>\n                                </div>\n                            </div>\n                        </footer>\n                    </div>\n                </div>\n            </div>\n        </footer>\n"
+            template: "\n        <footer>\n            <div class=\"navbar navbar-fixed-bottom\">\n                <div class=\"navbar-inner footer\">\n                    <div class=\"container\">\n                        <footer>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    \u00A9 Lock'D. All rights reserved.\n                                </div>\n                            </div>\n                        </footer>\n                    </div>\n                </div>\n            </div>\n        </footer>\n"
         }), 
         __metadata('design:paramtypes', [])
     ], FooterComponent);

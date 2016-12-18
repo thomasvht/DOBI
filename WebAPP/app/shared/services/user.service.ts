@@ -14,7 +14,6 @@ export class UserService {
     }
 
     login(user:ILogin) {
-        console.log("Login!");
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -26,15 +25,15 @@ export class UserService {
             )
             .map(res => res.json())
             .map((res) => {
-                console.log(res);
                 if (res.error) {
                     this.loggedIn = false;
                 }else{
-                    localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.email }));
+                    console.log(res);
+                    localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.Email }));
                     this.loggedIn = true;
                 }
 
-                return res.success;
+                return res;
             });
     }
 
@@ -46,15 +45,14 @@ export class UserService {
             .post('http://127.0.0.1:5000/register', user, headers)
             .map(res => res.json())
             .map((res) => {
-                console.log(res);
                 if (res.error) {
                     this.loggedIn = false;
                 }else{
-                    localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.email }));
+                    localStorage.setItem('auth_token', JSON.stringify({ token: res.token, email: res.user.Email }));
                     this.loggedIn = true;
                 }
 
-                return res.success;
+                return res;
             });
     }
 

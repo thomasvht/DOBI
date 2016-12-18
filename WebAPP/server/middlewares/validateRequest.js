@@ -5,10 +5,12 @@ const jwt = require('jwt-simple');
 let User = require('../models/user');
 
 let validateUser = function(email, callback) {
-    console.log(email);
     User.findOne({email:email},function (err, user) {
-        if(!user) callback(err,null);
-        console.log(user);
+        if(!user){
+            callback(err,null);
+            return;
+        }
+
         let dbUserObj = {
             name: user.name,
             role: user.role,

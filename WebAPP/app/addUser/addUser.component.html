@@ -1,0 +1,13 @@
+<header></header>
+
+<main>
+    <div class="page-block-primary col-lg-6 col-lg-offset-3">
+        <h2 class="page-block_H2">Add user</h2>
+
+        <input type="text" placeholder="Email" class="page-block_textInput_secondary" [(ngModel)]="email">
+
+        <button role="button" class="page-block_submitBtn" (click)="addUser()">Add</button>
+
+        <p class="page-block_error" *ngIf="errorMessage">{{errorMessage}}</p>
+    </div>
+</main>

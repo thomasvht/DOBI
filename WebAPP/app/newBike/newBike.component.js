@@ -13,15 +13,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var data_service_1 = require('../shared/services/data.service');
+var router_1 = require('@angular/router');
 var newBikeComponent = (function () {
-    function newBikeComponent(dataService) {
+    function newBikeComponent(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
     }
     newBikeComponent.prototype.addNewBike = function () {
-        this.dataService.addNewBike(this.number, this.lockid)
-            .subscribe(function (data) {
-            return console.log(data);
-        });
+        var _this = this;
+        if (this.number && this.lockid && this.unlockCode) {
+            this.dataService.addNewBike(this.number, this.lockid, this.unlockCode)
+                .subscribe(function (result) {
+                if (result) {
+                    if (result.error) {
+                        _this.errorMessage = result.error;
+                    }
+                    else {
+                        _this.router.navigate(['/dashboard']);
+                    }
+                }
+            });
+        }
+        else {
+            this.errorMessage = "All fields are required";
+        }
     };
     newBikeComponent = __decorate([
         core_1.Component({
@@ -29,7 +44,7 @@ var newBikeComponent = (function () {
             selector: 'newbike',
             templateUrl: 'newBike.component.html'
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
+        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router])
     ], newBikeComponent);
     return newBikeComponent;
 }());

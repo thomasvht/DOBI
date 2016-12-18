@@ -55,6 +55,16 @@ main{
   width: 100%;
 }
 
+.page-block_textInput_secondary{
+  background-color: #FFFFFF;
+  font-size: 18px;
+  border: none;
+  border-bottom: 3px solid $mainColor1;
+  color: $mainColor1;
+  margin: 25px auto;
+  width: 100%;
+}
+
 .page-block_nameInput{
   display: inline;
   float: right;
@@ -107,6 +117,12 @@ main{
 .register_name{
   width: 50%;
 }
+
+.page-block_error{
+  background-color: $DenialColor;
+  padding: 10px;
+  color: #FFFFFF;
+}
 /************** PageBlock End ************** */
 
 /************** Navbar ************** */
@@ -124,6 +140,14 @@ main{
   padding-top: 10px;
 }
 
+.nav-link{
+  color: white;
+  padding: 15px;
+}
+
+li:hover{
+  text-decoration: underline;
+}
 /************** NavBar End ************** */
 
 /************** Dashboard ************** */
@@ -133,10 +157,56 @@ main{
   text-align: center;
   color: white;
   font-size: 30px;
+  margin-top: 15px;
 }
 
 .dashboard-block > span{
   font-size: 44px;
 }
+
+.dashboard-SearchBlock{
+  margin-bottom: 20px;
+}
+
+.dashboard-SearchBlock_box{
+  border: 2px solid $mainColor1;
+  width: 250px;
+}
+
+.dashboard_hr{
+  border-top-color: $mainColor1;
+}
+
+.link{
+  color: $mainColor2;
+  font-size: 20px;
+}
+
+.tableLine{
+  border-bottom: 1px solid $SubColor;
+  line-height: 2em;
+}
+
+.tableLine:hover{
+  border-bottom: 1px solid $mainColor2;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.right-addon input { padding-right: 30px; }
 
 /************** Dashboard End ************** */

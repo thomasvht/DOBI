@@ -9,30 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by Sander Verkaemer on 01/12/2016.
+ * Created by Sander Verkaemer on 08/12/2016.
  */
 var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
-var BikesComponent = (function () {
-    function BikesComponent(dataService) {
-        this.dataService = dataService;
-        this.bikes = [];
-        this.amountOfBikes = this.bikes.length;
+var IndexComponent = (function () {
+    function IndexComponent() {
     }
-    BikesComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.dataService.getAdminBikes()
-            .subscribe(function (data) { return _this.bikes = data; });
-    };
-    BikesComponent = __decorate([
+    IndexComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'bikes',
-            templateUrl: 'bikes.component.html'
+            selector: 'index',
+            templateUrl: 'index.component.html'
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
-    ], BikesComponent);
-    return BikesComponent;
+        __metadata('design:paramtypes', [])
+    ], IndexComponent);
+    return IndexComponent;
 }());
-exports.BikesComponent = BikesComponent;
-//# sourceMappingURL=bikes.component.js.map
+exports.IndexComponent = IndexComponent;
+//# sourceMappingURL=index.component.js.map

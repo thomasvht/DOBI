@@ -5,14 +5,13 @@ let express    = require('express');        // call express
 let app        = express();                 // define our app using express
 let bodyParser = require('body-parser');
 let mongoose   = require('mongoose');
-let logger = require('morgan');
 
-let auth = require('./server/Routes/auth');
 let APIRouter = require('./server/Routes/APIRouter');
+let User = require('./server/models/user');
+let jwt = require('jwt-simple');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(logger('dev'));
 
 let port = process.env.PORT || 5000;        // set our port
 
@@ -32,44 +31,53 @@ app.all('/*', function(req, res, next) {
     }
 });
 
-let User = require('./server/models/user');
-let jwt = require('jwt-simple');
-
 app.post('/login', function (req,res) {
     let reqUser = req.body;
 
     User.findOne({email:reqUser.email},function (err, user) {
         if(err) throw (err);
 
-        if(!user)
-            res.send({'message':'No user!'});
+        if(!user){
+            res.send({'error': 'User not recognized!'});
+            return;
+        }
 
-
+        if(!reqUser.password){
+            res.send({'error': 'Wrong Password!'});
+            return;
+        }
         user.comparePasswords(reqUser.password, function(err, isMatch) {
             if(err) throw (err);
 
-            console.log(isMatch);
             if(!isMatch)
-                res.send({'message':'Wrong Password!'});
+                res.send({'error':'Wrong Password!'});
 
             res.json(genToken(user));
         })
     });
 });
-
 app.post("/register",function (req,res) {
     let user = req.body;
 
     let newUser = new User({
         firstname: user.firstname,
-        name: user.firstname,
+        name: user.name,
         email: user.email,
         password: user.password,
         role: 'user'
     });
 
-    newUser.save(function(err){
-        res.json(genToken(user));
+    User.findOne({email: newUser.email},function (err, user) {
+        if (err) throw (err);
+
+        if (user) {
+            res.send({'error': 'User already exists!'});
+            return;
+        }
+
+        newUser.save(function (err) {
+            res.json(genToken(newUser));
+        });
     });
 });
 
@@ -81,7 +89,7 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port);
-console.log('The magic happens on port ' + port);
+console.log('The magic happens on port: ' + port);
 
 function genToken(user) {
     let expires = expiresIn(8); // 7 days
@@ -89,13 +97,14 @@ function genToken(user) {
         exp: expires
     }, require('./server/config/secret')());
 
+    user.friendList = null;
+
     return {
         token: token,
         expires: expires,
         user: user
     };
 }
-
 function expiresIn(numDays) {
     let dateObj = new Date();
     return dateObj.setDate(dateObj.getDate() + numDays);
