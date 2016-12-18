@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 07/12/2016.
  */
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var user_service_1 = require('./services/user.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var user_service_1 = require("./services/user.service");
 var HeaderComponent = (function () {
     function HeaderComponent(userService, router) {
         this.userService = userService;
@@ -23,15 +23,15 @@ var HeaderComponent = (function () {
         this.userService.logout();
         this.router.navigate(['/']);
     };
-    HeaderComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'header',
-            template: "\n        <nav class=\"navbar navbar-default navbar-fixed-top nav-bar\">\n            <div class=\"container-fluid col-lg-8 col-lg-offset-2\">\n                <!-- Brand and toggle get grouped for better mobile display -->\n                <div class=\"navbar-header\">\n                    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span>\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                    </button>\n                    <a class=\"navbar-brand\" href=\"dashboard\">Lock'D</a>\n                </div>\n        \n                <!-- Collect the nav links, forms, and other content for toggling -->\n                <div class=\"collapse navbar-collapse pull-right\" id=\"bs-example-navbar-collapse-1\">\n                    <ul class=\"nav navbar-nav\">\n                        <li class=\"nav-link\">Link</li>\n                        <li class=\"nav-link\" (click)=\"logout()\">Logout</li>\n                    </ul>\n                </div><!-- /.navbar-collapse -->\n            </div><!-- /.container-fluid -->\n        </nav>\n"
-        }), 
-        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
-    ], HeaderComponent);
     return HeaderComponent;
 }());
+HeaderComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'header',
+        template: "\n        <nav class=\"navbar navbar-default navbar-fixed-top nav-bar\">\n            <div class=\"container-fluid col-lg-8 col-lg-offset-2\">\n                <!-- Brand and toggle get grouped for better mobile display -->\n                <div class=\"navbar-header\">\n                    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span>\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                    </button>\n                    <a class=\"navbar-brand\" href=\"dashboard\">Lock'D</a>\n                </div>\n        \n                <!-- Collect the nav links, forms, and other content for toggling -->\n                <div class=\"collapse navbar-collapse pull-right\" id=\"bs-example-navbar-collapse-1\">\n                    <ul class=\"nav navbar-nav\">\n                        <li class=\"nav-link\">Link</li>\n                        <li class=\"nav-link\" (click)=\"logout()\">Logout</li>\n                    </ul>\n                </div><!-- /.navbar-collapse -->\n            </div><!-- /.container-fluid -->\n        </nav>\n"
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;
 //# sourceMappingURL=header.component.js.map

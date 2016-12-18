@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 01/12/2016.
  */
-var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var data_service_1 = require("../shared/services/data.service");
+var router_1 = require("@angular/router");
 var newBikeComponent = (function () {
     function newBikeComponent(dataService, router) {
         this.dataService = dataService;
@@ -38,15 +38,15 @@ var newBikeComponent = (function () {
             this.errorMessage = "All fields are required";
         }
     };
-    newBikeComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'newbike',
-            templateUrl: 'newBike.component.html'
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router])
-    ], newBikeComponent);
     return newBikeComponent;
 }());
+newBikeComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'newbike',
+        templateUrl: 'newBike.component.html'
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router])
+], newBikeComponent);
 exports.newBikeComponent = newBikeComponent;
 //# sourceMappingURL=newBike.component.js.map

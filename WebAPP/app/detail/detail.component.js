@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 09/12/2016.
  */
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var data_service_1 = require('../shared/services/data.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var data_service_1 = require("../shared/services/data.service");
 var DetailComponent = (function () {
-    function DetailComponent(dataService, route) {
+    function DetailComponent(dataService, router, route) {
         this.dataService = dataService;
+        this.router = router;
         this.route = route;
     }
     DetailComponent.prototype.ngOnInit = function () {
@@ -25,9 +26,17 @@ var DetailComponent = (function () {
             _this.id = params['id'];
             _this.dataService.getBikeById(params['id'])
                 .subscribe(function (data) {
+                if (!data.Number)
+                    _this.router.navigate(['/dashboard']);
                 _this.number = data.Number;
-                _this.user = data.User.firstname + " " + data.User.name;
-                _this.email = data.User.email;
+                if (!data.User) {
+                    _this.user = "No user";
+                    _this.email = "";
+                }
+                else {
+                    _this.user = data.User.Firstname + " " + data.User.Name;
+                    _this.email = data.User.Email;
+                }
                 _this.inMaintenance = data.inMaintenance;
             });
             _this.dataService.getMaintenances(params['id'])
@@ -41,15 +50,15 @@ var DetailComponent = (function () {
             .subscribe(function (data) {
         });
     };
-    DetailComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'detail',
-            templateUrl: 'detail.component.html'
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.ActivatedRoute])
-    ], DetailComponent);
     return DetailComponent;
 }());
+DetailComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'detail',
+        templateUrl: 'detail.component.html'
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router, router_1.ActivatedRoute])
+], DetailComponent);
 exports.DetailComponent = DetailComponent;
 //# sourceMappingURL=detail.component.js.map

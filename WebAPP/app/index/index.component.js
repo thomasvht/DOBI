@@ -11,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 08/12/2016.
  */
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var IndexComponent = (function () {
     function IndexComponent() {
     }
-    IndexComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'index',
-            templateUrl: 'index.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], IndexComponent);
     return IndexComponent;
 }());
+IndexComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'index',
+        templateUrl: 'index.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], IndexComponent);
 exports.IndexComponent = IndexComponent;
 //# sourceMappingURL=index.component.js.map

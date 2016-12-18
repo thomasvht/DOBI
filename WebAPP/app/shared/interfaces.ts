@@ -22,7 +22,6 @@ export  interface ILogin{
 
 export  interface  IMaintenance{
     BikeId:string;
-    Date:string;
     Mechanic:string;
     Description:string;
     Price:number;

@@ -3,7 +3,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../shared/services/data.service';
 import { IBike, IMaintenance} from '../shared/interfaces';
 
@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit{
 
     maintenances: IMaintenance[];
 
-    constructor(private dataService: DataService,private route: ActivatedRoute) {
+    constructor(private dataService: DataService,private router: Router,private route: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -30,9 +30,15 @@ export class DetailComponent implements OnInit{
             this.id = params['id'];
             this.dataService.getBikeById(params['id'])
                 .subscribe((data: IBike) =>{
+                        if(!data.Number) this.router.navigate(['/dashboard']);
                         this.number = data.Number;
-                        this.user = data.User.firstname + " " + data.User.name;
-                        this.email = data.User.email;
+                        if(!data.User){
+                            this.user = "No user";
+                            this.email = "";
+                        }else{
+                            this.user = data.User.Firstname + " " + data.User.Name;
+                            this.email = data.User.Email;
+                        }
                         this.inMaintenance = data.inMaintenance;
                     }
                 );

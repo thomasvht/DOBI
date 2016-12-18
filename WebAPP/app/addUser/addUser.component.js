@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 16/12/2016.
  */
-var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var data_service_1 = require("../shared/services/data.service");
+var router_1 = require("@angular/router");
 var addUserComponent = (function () {
     function addUserComponent(dataService, router, route) {
         this.dataService = dataService;
@@ -43,15 +43,15 @@ var addUserComponent = (function () {
             this.errorMessage = "All fields are required";
         }
     };
-    addUserComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'addUser',
-            templateUrl: 'addUser.component.html'
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router, router_1.ActivatedRoute])
-    ], addUserComponent);
     return addUserComponent;
 }());
+addUserComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'addUser',
+        templateUrl: 'addUser.component.html'
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router, router_1.ActivatedRoute])
+], addUserComponent);
 exports.addUserComponent = addUserComponent;
 //# sourceMappingURL=addUser.component.js.map

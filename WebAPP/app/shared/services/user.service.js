@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 08/12/2016.
  */
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var UserService = (function () {
     function UserService(http) {
         this.http = http;
@@ -63,11 +63,11 @@ var UserService = (function () {
     UserService.prototype.isLoggedIn = function () {
         return this.loggedIn;
     };
-    UserService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], UserService);
     return UserService;
 }());
+UserService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

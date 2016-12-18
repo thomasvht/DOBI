@@ -22,13 +22,13 @@ export class DashboardComponent implements OnInit{
     constructor(private dataService: DataService, private router: Router) {
     }
 
-    ngOnInit() {
+    ngOnInit(){
         this.dataService.getBikesByOwner()
             .subscribe((data: IBike[]) =>{
                 this.bikes = data;
                 this.amountOfBikes = this.bikes.length;
                 for(let i=0;i<this.bikes.length; i++){
-                    if(this.bikes[i].User == "Currently no user"){
+                    if(!this.bikes[i].User){
                         this.noUsers++;
                     }
                     if(this.bikes[i].inMaintenance == true){

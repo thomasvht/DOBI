@@ -1,22 +1,32 @@
 /**
- * Created by Sander Verkaemer on 23/11/2016.
+ * Created by Sander Verkaemer on 17/12/2016.
  */
-let express    = require('express');        // call express
-let app        = express();                 // define our app using express
-let bodyParser = require('body-parser');
-let mongoose   = require('mongoose');
+"use strict";
 
-let APIRouter = require('./server/Routes/APIRouter');
-let User = require('./server/models/user');
-let jwt = require('jwt-simple');
+let express    = require('express'),
+    bodyParser = require('body-parser'),
+    mongoose   = require('mongoose'),
+    helpers    = require('./server/helpers/helpers'),
+    port = 5000,
+    ipaddress = null;
+
+let APIRouter = require('./server/router/api.router'),
+    authRouter = require('./server/router/auth.router');
+
+let app = express();
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://127.0.0.1:27017/lockD');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let port = process.env.PORT || 5000;        // set our port
+helpers.getIPAddress(function (err, address) {
+    if(err)
+        helpers.handleError(err);
 
-mongoose.connect("mongodb://127.0.0.1:27017/Lock'D");
-
+    ipaddress = address;
+});
 
 app.all('/*', function(req, res, next) {
     // CORS  headers
@@ -31,82 +41,15 @@ app.all('/*', function(req, res, next) {
     }
 });
 
-app.post('/login', function (req,res) {
-    let reqUser = req.body;
-
-    User.findOne({email:reqUser.email},function (err, user) {
-        if(err) throw (err);
-
-        if(!user){
-            res.send({'error': 'User not recognized!'});
-            return;
-        }
-
-        if(!reqUser.password){
-            res.send({'error': 'Wrong Password!'});
-            return;
-        }
-        user.comparePasswords(reqUser.password, function(err, isMatch) {
-            if(err) throw (err);
-
-            if(!isMatch)
-                res.send({'error':'Wrong Password!'});
-
-            res.json(genToken(user));
-        })
-    });
-});
-app.post("/register",function (req,res) {
-    let user = req.body;
-
-    let newUser = new User({
-        firstname: user.firstname,
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        role: 'user'
-    });
-
-    User.findOne({email: newUser.email},function (err, user) {
-        if (err) throw (err);
-
-        if (user) {
-            res.send({'error': 'User already exists!'});
-            return;
-        }
-
-        newUser.save(function (err) {
-            res.json(genToken(newUser));
-        });
-    });
-});
-
 //app.all('/api/*', [require('./server/middlewares/validateRequest')]);
 app.use('/api', APIRouter);
 
+app.post('/login', function (req,res){authRouter.login(req,res);});
+app.post('/register', function (req,res){authRouter.register(req,res);});
+
 app.get('/', function(req, res) {
-    res.redirect('http://localhost:3000');
+    res.redirect('http://' + ipaddress + ":3000");
 });
 
 app.listen(port);
-console.log('The magic happens on port: ' + port);
-
-function genToken(user) {
-    let expires = expiresIn(8); // 7 days
-    let token = jwt.encode({
-        exp: expires
-    }, require('./server/config/secret')());
-
-    user.friendList = null;
-
-    return {
-        token: token,
-        expires: expires,
-        user: user
-    };
-}
-function expiresIn(numDays) {
-    let dateObj = new Date();
-    return dateObj.setDate(dateObj.getDate() + numDays);
-}
-
+console.log('The magic happens on port:', ipaddress + ':' + port);

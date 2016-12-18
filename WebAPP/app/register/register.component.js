@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 01/12/2016.
  */
-var core_1 = require('@angular/core');
-var user_service_1 = require('../shared/services/user.service');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var user_service_1 = require("../shared/services/user.service");
+var router_1 = require("@angular/router");
 var RegisterComponent = (function () {
     function RegisterComponent(userService, router) {
         this.userService = userService;
@@ -43,15 +43,15 @@ var RegisterComponent = (function () {
             });
         }
     };
-    RegisterComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'register',
-            templateUrl: 'register.component.html'
-        }), 
-        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
-    ], RegisterComponent);
     return RegisterComponent;
 }());
+RegisterComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'register',
+        templateUrl: 'register.component.html'
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map

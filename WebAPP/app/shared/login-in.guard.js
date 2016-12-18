@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 08/12/2016.
  */
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var user_service_1 = require('./services/user.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var user_service_1 = require("./services/user.service");
 var LoggedInGuard = (function () {
     function LoggedInGuard(user, router) {
         this.user = user;
@@ -25,11 +25,11 @@ var LoggedInGuard = (function () {
         }
         return this.user.isLoggedIn();
     };
-    LoggedInGuard = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
-    ], LoggedInGuard);
     return LoggedInGuard;
 }());
+LoggedInGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], LoggedInGuard);
 exports.LoggedInGuard = LoggedInGuard;
 //# sourceMappingURL=login-in.guard.js.map

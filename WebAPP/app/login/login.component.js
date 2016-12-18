@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 01/12/2016.
  */
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var user_service_1 = require('../shared/services/user.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var user_service_1 = require("../shared/services/user.service");
 var LoginComponent = (function () {
     function LoginComponent(userService, router) {
         this.userService = userService;
@@ -36,15 +36,15 @@ var LoginComponent = (function () {
             }
         });
     };
-    LoginComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'login',
-            templateUrl: 'login.component.html'
-        }), 
-        __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
-    ], LoginComponent);
     return LoginComponent;
 }());
+LoginComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'login',
+        templateUrl: 'login.component.html'
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

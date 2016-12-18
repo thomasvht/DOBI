@@ -1,14 +1,14 @@
 "use strict";
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard/dashboard.component');
-var login_component_1 = require('./login/login.component');
-var register_component_1 = require('./register/register.component');
-var newBike_component_1 = require('./newBike/newBike.component');
-var index_component_1 = require('./index/index.component');
-var detail_component_1 = require('./detail/detail.component');
-var maintenance_component_1 = require('./maintenance/maintenance.component');
-var addUser_component_1 = require('./addUser/addUser.component');
-var login_in_guard_1 = require('./shared/login-in.guard');
+var router_1 = require("@angular/router");
+var dashboard_component_1 = require("./dashboard/dashboard.component");
+var login_component_1 = require("./login/login.component");
+var register_component_1 = require("./register/register.component");
+var newBike_component_1 = require("./newBike/newBike.component");
+var index_component_1 = require("./index/index.component");
+var detail_component_1 = require("./detail/detail.component");
+var maintenance_component_1 = require("./maintenance/maintenance.component");
+var addUser_component_1 = require("./addUser/addUser.component");
+var login_in_guard_1 = require("./shared/login-in.guard");
 var app_routes = [
     { path: '', pathMatch: 'full', component: index_component_1.IndexComponent },
     { path: 'login', component: login_component_1.LoginComponent },

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 
 import { DataService } from '../shared/services/data.service';
 import { IMaintenance } from '../shared/interfaces';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -14,22 +14,20 @@ import { Router } from '@angular/router';
 })
 
 export class MaintenanceComponent{
-
     id:string;
-    date:string;
     mechanic:string;
     description:string;
     price:number;
     errorMessage:string;
 
-    constructor(private dataService: DataService, private router:Router) {
+    constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) {
     }
 
     addNewMaintenance(){
-        if(this.date && this.mechanic && this.description && this.price){
+        if(this.mechanic && this.description && this.price){
+            this.route.params.subscribe(params => { this.id = params['id'];});
             let maintenance: IMaintenance = {
                 BikeId: this.id,
-                Date: this.date,
                 Mechanic: this.mechanic,
                 Description: this.description,
                 Price:this.price

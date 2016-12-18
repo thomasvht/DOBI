@@ -11,20 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 09/12/2016.
  */
-var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var data_service_1 = require("../shared/services/data.service");
+var router_1 = require("@angular/router");
 var MaintenanceComponent = (function () {
-    function MaintenanceComponent(dataService, router) {
+    function MaintenanceComponent(dataService, router, route) {
         this.dataService = dataService;
         this.router = router;
+        this.route = route;
     }
     MaintenanceComponent.prototype.addNewMaintenance = function () {
         var _this = this;
-        if (this.date && this.mechanic && this.description && this.price) {
+        if (this.mechanic && this.description && this.price) {
+            this.route.params.subscribe(function (params) { _this.id = params['id']; });
             var maintenance = {
                 BikeId: this.id,
-                Date: this.date,
                 Mechanic: this.mechanic,
                 Description: this.description,
                 Price: this.price
@@ -45,15 +46,15 @@ var MaintenanceComponent = (function () {
             this.errorMessage = "All fields are required";
         }
     };
-    MaintenanceComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'maintenance',
-            templateUrl: 'maintenance.component.html'
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router])
-    ], MaintenanceComponent);
     return MaintenanceComponent;
 }());
+MaintenanceComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'maintenance',
+        templateUrl: 'maintenance.component.html'
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService, router_1.Router, router_1.ActivatedRoute])
+], MaintenanceComponent);
 exports.MaintenanceComponent = MaintenanceComponent;
 //# sourceMappingURL=maintenance.component.js.map

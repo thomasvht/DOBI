@@ -58,7 +58,7 @@ export class DataService {
     addUser(id:string, email:string):any{
         let body = {
             "Email":email,
-            "BikeId":id
+            "Id":id
         };
         return this.http.post('http://localhost:5000/api/bike/addUser', body, GenerateHeaders())
             .map((resp: Response) => resp.json())
