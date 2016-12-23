@@ -11,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 07/12/2016.
  */
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var FooterComponent = (function () {
     function FooterComponent() {
     }
-    FooterComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'DashboardFooter',
-            template: "\n        <footer>\n            <div class=\"navbar navbar-fixed-bottom\">\n                <div class=\"navbar-inner footer\">\n                    <div class=\"container\">\n                        <footer>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    Created by <a href=\"http://twitter.com/DanWahlin\" target=\"_blank\">@DanWahlin</a>\n                                </div>\n                            </div>\n                        </footer>\n                    </div>\n                </div>\n            </div>\n        </footer>\n"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FooterComponent);
     return FooterComponent;
 }());
+FooterComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'DashboardFooter',
+        template: "\n        <footer>\n            <div class=\"navbar navbar-fixed-bottom\">\n                <div class=\"navbar-inner footer\">\n                    <div class=\"container\">\n                        <footer>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    \u00A9 Lock'D. All rights reserved.\n                                </div>\n                            </div>\n                        </footer>\n                    </div>\n                </div>\n            </div>\n        </footer>\n"
+    }),
+    __metadata("design:paramtypes", [])
+], FooterComponent);
 exports.FooterComponent = FooterComponent;
 //# sourceMappingURL=footer.component.js.map

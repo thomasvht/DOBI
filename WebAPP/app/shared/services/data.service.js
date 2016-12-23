@@ -8,47 +8,84 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/catch');
-var Rx_1 = require('rxjs/Rx');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+var Rx_1 = require("rxjs/Rx");
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
     }
-    DataService.prototype.getAdminBikes = function () {
-        return this.http.get('http://localhost:5000/api/admin/bike')
+    DataService.prototype.getBikesByOwner = function () {
+        return this.http.get('http://localhost:5000/api/bike/byOwner/' + ReadUserFromLocalStorage(), GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
-    DataService.prototype.register = function (user) {
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_1.RequestOptions({ headers: headers });
-        this.http
-            .post('http://127.0.0.1:5000/register', user, options)
-            .subscribe(function (result) {
-            console.log('result', result);
-        });
+    DataService.prototype.addNewBike = function (number, lockid, unlockCode) {
+        var body = {
+            "Number": number,
+            "LockId": lockid,
+            "Owner": ReadUserFromLocalStorage(),
+            "UnlockCode": unlockCode
+        };
+        return this.http.post('http://localhost:5000/api/bike/add/', body, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
     };
-    DataService.prototype.login = function (user) {
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_1.RequestOptions({ headers: headers });
-        this.http
-            .post('http://127.0.0.1:5000/login', user, options)
-            .subscribe(function (result) {
-            console.log('result', result);
-        });
+    DataService.prototype.getBikeById = function (id) {
+        return this.http.get('http://localhost:5000/api/bike/single/' + id, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.addNewMaintenance = function (maintenance) {
+        return this.http.post('http://localhost:5000/api/maintenance/add/', maintenance, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.getMaintenances = function (id) {
+        return this.http.get('http://localhost:5000/api/maintenance/' + id, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.toggleMaintenance = function (id) {
+        return this.http.post('http://localhost:5000/api/bike/toggleInMaintenance/' + id, null, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.addUser = function (id, email) {
+        var body = {
+            "Email": email,
+            "Id": id
+        };
+        return this.http.post('http://localhost:5000/api/bike/addUser', body, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
     };
     DataService.prototype.handleError = function (error) {
         console.error(error);
         return Rx_1.Observable.throw(error.json().error || 'Server error');
     };
-    DataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], DataService);
     return DataService;
 }());
+DataService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], DataService);
 exports.DataService = DataService;
+function GenerateHeaders() {
+    var currentUser = JSON.parse(localStorage.getItem('auth_token'));
+    var token = currentUser.token;
+    var email = currentUser.email;
+    var headers = new http_1.Headers({
+        'Content-Type': 'application/json',
+        'x-access-token': token,
+        'x-key': email
+    });
+    return new http_1.RequestOptions({ headers: headers });
+}
+function ReadUserFromLocalStorage() {
+    var currentUser = JSON.parse(localStorage.getItem('auth_token'));
+    return currentUser.email;
+}
 //# sourceMappingURL=data.service.js.map

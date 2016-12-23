@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
                         <footer>
                             <div class="row">
                                 <div class="col-md-12">
-                                    Created by <a href="http://twitter.com/DanWahlin" target="_blank">@DanWahlin</a>
+                                    © Lock'D. All rights reserved.
                                 </div>
                             </div>
                         </footer>

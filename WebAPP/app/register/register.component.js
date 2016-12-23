@@ -11,35 +11,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Sander Verkaemer on 01/12/2016.
  */
-var core_1 = require('@angular/core');
-var data_service_1 = require('../shared/services/data.service');
+var core_1 = require("@angular/core");
+var user_service_1 = require("../shared/services/user.service");
+var router_1 = require("@angular/router");
 var RegisterComponent = (function () {
-    function RegisterComponent(dataService) {
-        this.dataService = dataService;
+    function RegisterComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
     }
     RegisterComponent.prototype.register = function () {
+        var _this = this;
         if (this.password != this.passwordRepeat) {
-            this.warningMessage = "Passwords are not the same!";
+            this.errorMessage = "Passwords are not the same!";
         }
         else {
             var user = {
-                firstname: this.firstname,
-                name: this.name,
-                email: this.email,
-                password: this.password,
+                Firstname: this.firstname,
+                Name: this.name,
+                Email: this.email,
+                Password: this.password,
             };
-            this.dataService.register(user);
+            this.userService.register(user).subscribe(function (result) {
+                if (result) {
+                    if (result.error) {
+                        _this.errorMessage = result.error;
+                    }
+                    else {
+                        _this.router.navigate(['/dashboard']);
+                    }
+                }
+            });
         }
     };
-    RegisterComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'register',
-            templateUrl: 'register.component.html'
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
-    ], RegisterComponent);
     return RegisterComponent;
 }());
+RegisterComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'register',
+        templateUrl: 'register.component.html'
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map

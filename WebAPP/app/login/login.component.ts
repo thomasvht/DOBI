@@ -2,9 +2,10 @@
  * Created by Sander Verkaemer on 01/12/2016.
  */
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { DataService } from '../shared/services/data.service';
 import { ILogin } from '../shared/interfaces';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
     moduleId: module.id,
@@ -16,14 +17,23 @@ export class LoginComponent {
     email:string;
     password:string;
 
-    constructor(private dataService: DataService) {
-    }
+    errorMessage:string;
+
+    constructor(private userService: UserService, private router: Router) {}
 
     login() {
         let user : ILogin = {
-            email: this.email,
-            password: this.password,
+            Email: this.email,
+            Password: this.password,
         };
-        this.dataService.login(user);
+        this.userService.login(user).subscribe((result) => {
+            if (result) {
+                if(result.error){
+                    this.errorMessage = result.error;
+                }else {
+                    this.router.navigate(['/dashboard']);
+                }
+            }
+        });
     }
 }

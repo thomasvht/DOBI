@@ -5,4 +5,8 @@
     <input type="password" placeholder="Password" class="page-block_textInput" [(ngModel)]="password">
 
     <button role="button" class="page-block_submitBtn" (click)="login()">GO!</button>
+
+    <a href="register" class="page-block_smallLink">No account? Register!</a>
+
+    <p class="page-block_error" *ngIf="errorMessage">{{errorMessage}}</p>
 </div>

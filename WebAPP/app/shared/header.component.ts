@@ -2,6 +2,8 @@
  * Created by Sander Verkaemer on 07/12/2016.
  */
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
     moduleId: module.id,
@@ -17,14 +19,14 @@ import { Component } from '@angular/core';
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Lock'D</a>
+                    <a class="navbar-brand" href="dashboard">Lock'D</a>
                 </div>
         
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                        <li class="nav-link">Link</li>
+                        <li class="nav-link" (click)="logout()">Logout</li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -34,4 +36,10 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent{
 
+    constructor(private userService: UserService, private router: Router) {}
+
+    logout(){
+        this.userService.logout();
+        this.router.navigate(['/']);
+    }
 }
