@@ -118,8 +118,8 @@ router.route("/getRequests/:receiver_id").get(function (req,res) {
     });
 });
 
-router.route("/getFriends/:user_email").get(function (req,res) {
-    User.findFriendsByEmail(req.params.user_email, function(err, result) {
+router.route("/getFriends/:user_email").get(function (req,res){
+    User.findFriendsByEmail(req.params.user_email.toLowerCase(), function(err, result) {
         if (err) {
             helpers.handleError(err);
             return res.json({'error': "There went something wrong"});

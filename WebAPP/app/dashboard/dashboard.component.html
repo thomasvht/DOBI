@@ -28,7 +28,7 @@
         <a href="newBike" class="pull-left link">Add new bike</a>
         <div class="inner-addon right-addon">
             <i class="glyphicon glyphicon-search"></i>
-            <input type="search" class="pull-right dashboard-SearchBlock_box form-control" placeholder="Search">
+            <input type="search" class="pull-right dashboard-SearchBlock_box form-control" placeholder="Search" [(ngModel)]="searchValue">
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                 <th>Email</th>
                 <th>In Maintenance</th>
             </tr>
-            <tr *ngFor="let bike of bikes" (click)="getDetail(bike._id)" class="tableLine">
+            <tr *ngFor="let bike of bikes | myfilter:searchValue" (click)="getDetail(bike._id)" class="tableLine">
                 <td>#{{ bike.Number  }}</td>
                 <td *ngIf="!bike.User">No user</td>
                 <td *ngIf="bike.User">{{bike.User.Firstname}} {{bike.User.Name}}</td>

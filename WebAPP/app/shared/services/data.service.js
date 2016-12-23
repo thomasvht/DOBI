@@ -16,9 +16,11 @@ var Rx_1 = require("rxjs/Rx");
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
+        //private url:string = "http://146.185.162.171:5000/api";
+        this.url = "http://localhost:5000/api";
     }
     DataService.prototype.getBikesByOwner = function () {
-        return this.http.get('http://localhost:5000/api/bike/byOwner/' + ReadUserFromLocalStorage(), GenerateHeaders())
+        return this.http.get(this.url + '/bike/byOwner/' + ReadUserFromLocalStorage(), GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
@@ -29,27 +31,27 @@ var DataService = (function () {
             "Owner": ReadUserFromLocalStorage(),
             "UnlockCode": unlockCode
         };
-        return this.http.post('http://localhost:5000/api/bike/add/', body, GenerateHeaders())
+        return this.http.post(this.url + '/bike/add/', body, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
     DataService.prototype.getBikeById = function (id) {
-        return this.http.get('http://localhost:5000/api/bike/single/' + id, GenerateHeaders())
+        return this.http.get(this.url + '/bike/single/' + id, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
     DataService.prototype.addNewMaintenance = function (maintenance) {
-        return this.http.post('http://localhost:5000/api/maintenance/add/', maintenance, GenerateHeaders())
+        return this.http.post(this.url + '/maintenance/add/', maintenance, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
     DataService.prototype.getMaintenances = function (id) {
-        return this.http.get('http://localhost:5000/api/maintenance/' + id, GenerateHeaders())
+        return this.http.get(this.url + '/maintenance/' + id, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
     DataService.prototype.toggleMaintenance = function (id) {
-        return this.http.post('http://localhost:5000/api/bike/toggleInMaintenance/' + id, null, GenerateHeaders())
+        return this.http.post(this.url + '/bike/toggleInMaintenance/' + id, null, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };
@@ -58,7 +60,12 @@ var DataService = (function () {
             "Email": email,
             "Id": id
         };
-        return this.http.post('http://localhost:5000/api/bike/addUser', body, GenerateHeaders())
+        return this.http.post(this.url + '/bike/addUser', body, GenerateHeaders())
+            .map(function (resp) { return resp.json(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.removeUser = function (id) {
+        return this.http.post(this.url + '/bike/removeUser/' + id, null, GenerateHeaders())
             .map(function (resp) { return resp.json(); })
             .catch(this.handleError);
     };

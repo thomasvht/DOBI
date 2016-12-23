@@ -9,11 +9,12 @@ import {IBike, IMaintenance} from '../interfaces';
 
 @Injectable()
 export class DataService {
-
+    //private url:string = "http://146.185.162.171:5000/api";
+    private url:string = "http://localhost:5000/api";
     constructor (private http: Http) {}
 
     getBikesByOwner() : Observable<IBike[]>{
-        return this.http.get('http://localhost:5000/api/bike/byOwner/'+ ReadUserFromLocalStorage(), GenerateHeaders())
+        return this.http.get(this.url+'/bike/byOwner/'+ ReadUserFromLocalStorage(), GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }
@@ -26,31 +27,31 @@ export class DataService {
             "UnlockCode":unlockCode
         };
 
-        return this.http.post('http://localhost:5000/api/bike/add/', body, GenerateHeaders())
+        return this.http.post(this.url+'/bike/add/', body, GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }
 
     getBikeById(id:string): any{
-        return this.http.get('http://localhost:5000/api/bike/single/'+id, GenerateHeaders())
+        return this.http.get(this.url+'/bike/single/'+id, GenerateHeaders())
             .map((resp:Response) => resp.json())
             .catch(this.handleError);
     }
 
     addNewMaintenance(maintenance: IMaintenance) : any{
-        return this.http.post('http://localhost:5000/api/maintenance/add/', maintenance, GenerateHeaders())
+        return this.http.post(this.url+'/maintenance/add/', maintenance, GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }
 
     getMaintenances(id:string) : Observable<IMaintenance[]>{
-        return this.http.get('http://localhost:5000/api/maintenance/'+id, GenerateHeaders())
+        return this.http.get(this.url+'/maintenance/'+id, GenerateHeaders())
             .map((resp:Response) => resp.json())
             .catch(this.handleError);
     }
 
     toggleMaintenance(id:string):any{
-        return this.http.post('http://localhost:5000/api/bike/toggleInMaintenance/'+id, null, GenerateHeaders())
+        return this.http.post(this.url+'/bike/toggleInMaintenance/'+id, null, GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }
@@ -60,7 +61,13 @@ export class DataService {
             "Email":email,
             "Id":id
         };
-        return this.http.post('http://localhost:5000/api/bike/addUser', body, GenerateHeaders())
+        return this.http.post(this.url+'/bike/addUser', body, GenerateHeaders())
+            .map((resp: Response) => resp.json())
+            .catch(this.handleError);
+    }
+
+    removeUser(id:string):any{
+        return this.http.post(this.url+'/bike/removeUser/'+id, null, GenerateHeaders())
             .map((resp: Response) => resp.json())
             .catch(this.handleError);
     }

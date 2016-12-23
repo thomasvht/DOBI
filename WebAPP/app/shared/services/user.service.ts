@@ -8,7 +8,8 @@ import { ILogin, IUser} from '../interfaces';
 @Injectable()
 export class UserService {
     private loggedIn = false;
-
+    //private url:string = "http://146.185.162.171:5000";
+    private url:string = "http://localhost:5000";
     constructor(private http: Http) {
         this.loggedIn = !!localStorage.getItem('auth_token');
     }
@@ -19,7 +20,7 @@ export class UserService {
 
         return this.http
             .post(
-                'http://127.0.0.1:5000/login',
+                this.url+'/login',
                 user,
                 { headers }
             )
@@ -42,7 +43,7 @@ export class UserService {
         headers.append('Content-Type', 'application/json');
 
         return this.http
-            .post('http://127.0.0.1:5000/register', user, headers)
+            .post(this.url+'/register', user, headers)
             .map(res => res.json())
             .map((res) => {
                 if (res.error) {

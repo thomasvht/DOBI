@@ -23,6 +23,8 @@ var index_component_1 = require("./index/index.component");
 var detail_component_1 = require("./detail/detail.component");
 var maintenance_component_1 = require("./maintenance/maintenance.component");
 var addUser_component_1 = require("./addUser/addUser.component");
+var dashboard_pipe_1 = require("./dashboard/dashboard.pipe");
+var detail_pipe_1 = require("./detail/detail.pipe");
 var user_service_1 = require("./shared/services/user.service");
 var login_in_guard_1 = require("./shared/login-in.guard");
 var app_routing_1 = require("./app.routing");
@@ -46,7 +48,9 @@ AppModule = __decorate([
             index_component_1.IndexComponent,
             detail_component_1.DetailComponent,
             maintenance_component_1.MaintenanceComponent,
-            addUser_component_1.addUserComponent
+            addUser_component_1.addUserComponent,
+            dashboard_pipe_1.MyFilterPipe,
+            detail_pipe_1.SafePipe
         ],
         providers: [data_service_1.DataService, user_service_1.UserService, login_in_guard_1.LoggedInGuard],
         bootstrap: [app_component_1.AppComponent]

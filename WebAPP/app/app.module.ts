@@ -16,6 +16,9 @@ import { DetailComponent } from './detail/detail.component';
 import { MaintenanceComponent} from './maintenance/maintenance.component';
 import { addUserComponent } from './addUser/addUser.component';
 
+import { MyFilterPipe } from './dashboard/dashboard.pipe';
+import { SafePipe } from './detail/detail.pipe';
+
 import { UserService } from './shared/services/user.service';
 import { LoggedInGuard } from './shared/login-in.guard';
 
@@ -23,7 +26,7 @@ import { app_routing } from './app.routing';
 import { DataService } from './shared/services/data.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, app_routing ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, app_routing],
   declarations: [
     AppComponent,
     DashboardComponent,
@@ -35,7 +38,9 @@ import { DataService } from './shared/services/data.service';
     IndexComponent,
     DetailComponent,
     MaintenanceComponent,
-    addUserComponent
+    addUserComponent,
+    MyFilterPipe,
+    SafePipe
   ],
   providers:    [ DataService, UserService, LoggedInGuard ],
   bootstrap:    [ AppComponent ]

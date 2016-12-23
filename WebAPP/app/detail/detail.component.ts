@@ -20,6 +20,10 @@ export class DetailComponent implements OnInit{
     id:string;
     inMaintenance:boolean;
 
+    location:string;
+
+    url:string;
+
     maintenances: IMaintenance[];
 
     constructor(private dataService: DataService,private router: Router,private route: ActivatedRoute) {
@@ -32,7 +36,9 @@ export class DetailComponent implements OnInit{
                 .subscribe((data: IBike) =>{
                         if(!data.Number) this.router.navigate(['/dashboard']);
                         this.number = data.Number;
-                        if(!data.User){
+                        this.location = data.LastLocation;
+                        this.url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDIc_mfhGjEsnx-cKk7HglcHFGVCHL1x28&zoom=16&q="+this.location;
+                    if(!data.User){
                             this.user = "No user";
                             this.email = "";
                         }else{
@@ -56,6 +62,16 @@ export class DetailComponent implements OnInit{
             .subscribe((data : any) =>{
 
         });
+    }
+
+    deleteUser(){
+        this.dataService.removeUser(this.id)
+            .subscribe((data : any) =>{
+                if(data.message){
+                    this.user = "No user";
+                    this.email = "";
+                }
+            });
     }
 }
 

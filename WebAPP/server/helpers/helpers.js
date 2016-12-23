@@ -6,6 +6,7 @@ let Schema       = mongoose.Schema;
 
 let errorSchema   = new Schema({
     "errorMessage" : { type : String },
+    "fullerror" : { type: String },
     "timestamp" : { type: Date, default: new Date().toString() }
 });
 
@@ -31,6 +32,7 @@ module.exports = {
       handleError : function (err) {
           let error = new Error();
           console.log("Error Fired at", new Date().toString(),": ",err.message);
+          error.fullerror = err;
           error.errorMessage = err.message;
 
           error.save(function(err) {

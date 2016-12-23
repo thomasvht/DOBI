@@ -29,6 +29,8 @@ var DetailComponent = (function () {
                 if (!data.Number)
                     _this.router.navigate(['/dashboard']);
                 _this.number = data.Number;
+                _this.location = data.LastLocation;
+                _this.url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDIc_mfhGjEsnx-cKk7HglcHFGVCHL1x28&zoom=16&q=" + _this.location;
                 if (!data.User) {
                     _this.user = "No user";
                     _this.email = "";
@@ -48,6 +50,16 @@ var DetailComponent = (function () {
     DetailComponent.prototype.toggleMaintenance = function () {
         this.dataService.toggleMaintenance(this.id)
             .subscribe(function (data) {
+        });
+    };
+    DetailComponent.prototype.deleteUser = function () {
+        var _this = this;
+        this.dataService.removeUser(this.id)
+            .subscribe(function (data) {
+            if (data.message) {
+                _this.user = "No user";
+                _this.email = "";
+            }
         });
     };
     return DetailComponent;

@@ -17,6 +17,8 @@ var UserService = (function () {
     function UserService(http) {
         this.http = http;
         this.loggedIn = false;
+        //private url:string = "http://146.185.162.171:5000";
+        this.url = "http://localhost:5000";
         this.loggedIn = !!localStorage.getItem('auth_token');
     }
     UserService.prototype.login = function (user) {
@@ -24,7 +26,7 @@ var UserService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http
-            .post('http://127.0.0.1:5000/login', user, { headers: headers })
+            .post(this.url + '/login', user, { headers: headers })
             .map(function (res) { return res.json(); })
             .map(function (res) {
             if (res.error) {
@@ -43,7 +45,7 @@ var UserService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http
-            .post('http://127.0.0.1:5000/register', user, headers)
+            .post(this.url + '/register', user, headers)
             .map(function (res) { return res.json(); })
             .map(function (res) {
             if (res.error) {

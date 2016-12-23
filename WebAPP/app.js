@@ -16,7 +16,10 @@ let APIRouter = require('./server/router/api.router'),
 let app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/lockD');
+mongoose.connect('mongodb://127.0.0.1:27017/lockD', function (err) {
+    if(err)
+        console.log("No DB connection!", err);
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

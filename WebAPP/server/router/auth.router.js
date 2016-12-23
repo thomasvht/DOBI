@@ -8,6 +8,7 @@ let User = require('../models/user.model'),
 module.exports = {
     login: function (req,res) {
         let reqUser = req.body;
+
         if(!reqUser.Email){
             return res.send({'error': 'No valid Email found'});
         }

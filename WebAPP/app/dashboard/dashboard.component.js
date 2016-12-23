@@ -21,6 +21,7 @@ var DashboardComponent = (function () {
         this.bikes = [];
         this.noUsers = 0;
         this.amountOfInMaintenance = 0;
+        this.searchValue = "";
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;

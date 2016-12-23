@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit{
     noUsers:number = 0;
     amountOfInMaintenance:number = 0;
 
+    searchValue:string ="";
+
     constructor(private dataService: DataService, private router: Router) {
     }
 
