@@ -1,6 +1,8 @@
 /**
  * Created by Sander Verkaemer on 17/12/2016.
  */
+"use strict";
+
 let User = require('../models/user.model'),
     jwt = require('jwt-simple'),
     helpers = require('../helpers/helpers');

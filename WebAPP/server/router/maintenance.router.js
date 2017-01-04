@@ -1,9 +1,12 @@
 /**
  * Created by Sander Verkaemer on 17/12/2016.
  */
+
+"use strict";
+
 const router = require('express').Router();
 let Maintenance = require('../models/maintenance.model'),
-    helper = require('../helpers/helpers');
+    helper = require('../helpers/helpers'),
     Bike = require('../models/bike.model');
 
 router.route("/add").post(function (req, res) {

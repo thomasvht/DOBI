@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"tsc -w\" \"lite-server -c ./my-bs-config.js\" \"gulp\" \"nodemon app.js\""
+    "start": "concurrently \"tsc -w\" \"lite-server -c ./my-bs-config.js\" \"gulp\" \"nodemon app.js\"",
+    "front": "concurrently \"tsc -w\" \"lite-server -c ./my-bs-config.js\" \"gulp\""
   },
   "author": "Sander Verkaemer",
   "license": "ISC",
@@ -36,6 +37,8 @@
     "pug": "^2.0.0-beta6",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-rc.4",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
     "systemjs": "0.19.41",
     "zone.js": "^0.7.2"
   },
@@ -52,6 +55,7 @@
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.9.1",
     "lite-server": "^2.2.2",
-    "typescript": "2.1.4"
+    "tslint": "^4.2.0",
+    "typescript": "^2.1.4"
   }
 }

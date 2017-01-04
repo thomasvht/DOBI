@@ -8,8 +8,8 @@ import { ILogin, IUser} from '../interfaces';
 @Injectable()
 export class UserService {
     private loggedIn = false;
-    //private url:string = "http://146.185.162.171:5000";
-    private url:string = "http://localhost:5000";
+    private url:string = "http://146.185.162.171:5000";
+    //private url:string = "http://localhost:5000";
     constructor(private http: Http) {
         this.loggedIn = !!localStorage.getItem('auth_token');
     }

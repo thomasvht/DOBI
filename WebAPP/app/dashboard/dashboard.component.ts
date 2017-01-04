@@ -18,10 +18,12 @@ export class DashboardComponent implements OnInit{
     amountOfBikes: number;
     noUsers:number = 0;
     amountOfInMaintenance:number = 0;
+    socket:any = null;
 
     searchValue:string ="";
 
     constructor(private dataService: DataService, private router: Router) {
+        //this.socket = io('http://localhost:5000');
     }
 
     ngOnInit(){
@@ -43,5 +45,9 @@ export class DashboardComponent implements OnInit{
 
     getDetail(id:string){
         this.router.navigate(['/detail/'+id]);
+    }
+
+    shootSocket(){
+        this.socket.emit('bid', "Socket Shooted!");
     }
 }

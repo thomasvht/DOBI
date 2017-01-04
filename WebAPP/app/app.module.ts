@@ -15,6 +15,7 @@ import { IndexComponent } from './index/index.component';
 import { DetailComponent } from './detail/detail.component';
 import { MaintenanceComponent} from './maintenance/maintenance.component';
 import { addUserComponent } from './addUser/addUser.component';
+import { notFoundComponent } from './shared/notFound.component';
 
 import { MyFilterPipe } from './dashboard/dashboard.pipe';
 import { SafePipe } from './detail/detail.pipe';
@@ -39,6 +40,7 @@ import { DataService } from './shared/services/data.service';
     DetailComponent,
     MaintenanceComponent,
     addUserComponent,
+    notFoundComponent,
     MyFilterPipe,
     SafePipe
   ],

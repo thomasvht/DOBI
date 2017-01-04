@@ -1,6 +1,7 @@
 /**
  * Created by Sander Verkaemer on 27/11/2016.
  */
+"use strict";
 const jwt = require('jwt-simple');
 let User = require('../models/user.model');
 

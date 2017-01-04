@@ -23,7 +23,7 @@ login, register, .loader{
 }
 
 main{
-  padding-top: 70px;
+  margin-top: 70px;
 }
 
 h3{
@@ -94,7 +94,6 @@ h3{
   font-size: 30px;
   font-weight: bold;
   padding: 3px 40px;
-  display: block;
   margin: 15px auto;
   border-color: $mainColor2;
 }
@@ -285,3 +284,123 @@ input:checked + .slider:before {
 }
 
 /************** Toggle Switch End ************** */
+
+
+.header-img{
+  margin: 0;
+  width: 100%;
+  position:relative;
+}
+
+.post-content {
+  top:0;
+  left:0;
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 300px;
+}
+
+.header-containter{
+  padding: 0;
+}
+
+.header-title{
+  font-size: 80px;
+  color: $mainColor1;
+}
+
+#login, #register{
+  padding: 0;
+  color: #F2C14E;
+}
+
+.container{
+  padding: 0;
+}
+
+.btn-header{
+  color: white;
+  background-color: $mainColor2;
+  border-color: $mainColor2;
+  font-size: 35px;
+}
+
+.col-lg-4 > .fa{
+  font-size: 48px;
+}
+
+.footer{
+  background-color: $mainColor1;
+  padding-top: 20px;
+  color: white;
+  padding-bottom: 25px;
+  margin-top: 30px;
+}
+
+footer h3{
+  margin-bottom: 20px;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.footer-link{
+   color: white;
+ }
+
+.footer-link:hover{
+  color: $mainColor2;
+}
+
+.social-icon{
+  max-height: 50px;
+}
+
+.notFound-text{
+  color: white;
+  text-shadow: black 0 0 20px;
+}
+
+.notFound-link{
+  color: white;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-shadow: black 0 0 20px;
+}
+
+.notFound-link:hover{
+  text-decoration: underline;
+}
+
+.full {
+  background: url("../../images/notFound.jpg") center center fixed;
+  height: 100%;
+  opacity: 20;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.bg-primary{
+  background-color: $mainColor1;
+}
+
+.index-padding{
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+.icon-left{
+  padding: 0 5px 0 60px;
+}
+
+.icon-right{
+  padding: 0 60px 0 5px;
+}
+
+.navbar{
+  border: 0;
+}
+

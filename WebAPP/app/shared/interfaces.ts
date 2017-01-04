@@ -1,11 +1,11 @@
 export interface IBike{
-    Number: number,
-    LockId: string,
-    Owner : string,
-    User : any,
-    LastLocation : string,
-    inMaintenance : boolean,
-    UnlockCode : string
+    Number: number;
+    LockId: string;
+    Owner : string;
+    User : any;
+    LastLocation : string;
+    inMaintenance : boolean;
+    UnlockCode : string;
 }
 
 export interface IUser{

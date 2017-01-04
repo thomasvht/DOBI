@@ -8,6 +8,7 @@ var index_component_1 = require("./index/index.component");
 var detail_component_1 = require("./detail/detail.component");
 var maintenance_component_1 = require("./maintenance/maintenance.component");
 var addUser_component_1 = require("./addUser/addUser.component");
+var notFound_component_1 = require("./shared/notFound.component");
 var login_in_guard_1 = require("./shared/login-in.guard");
 var app_routes = [
     { path: '', pathMatch: 'full', component: index_component_1.IndexComponent },
@@ -17,7 +18,8 @@ var app_routes = [
     { path: 'newBike', component: newBike_component_1.newBikeComponent, canActivate: [login_in_guard_1.LoggedInGuard] },
     { path: 'detail/:id', component: detail_component_1.DetailComponent, canActivate: [login_in_guard_1.LoggedInGuard] },
     { path: 'maintenance/:id', component: maintenance_component_1.MaintenanceComponent, canActivate: [login_in_guard_1.LoggedInGuard] },
-    { path: 'addUser/:id', component: addUser_component_1.addUserComponent, canActivate: [login_in_guard_1.LoggedInGuard] }
+    { path: 'addUser/:id', component: addUser_component_1.addUserComponent, canActivate: [login_in_guard_1.LoggedInGuard] },
+    { component: notFound_component_1.notFoundComponent, path: "**" }
 ];
 exports.app_routing = router_1.RouterModule.forRoot(app_routes);
 //# sourceMappingURL=app.routing.js.map

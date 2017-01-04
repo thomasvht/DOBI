@@ -1,6 +1,9 @@
 /**
  * Created by Sander Verkaemer on 17/12/2016.
  */
+
+"use strict";
+
 const router = require('express').Router();
 
 let Bike = require('../models/bike.model'),
@@ -105,6 +108,30 @@ router.route("/removeUser/:bike_id").post(function (req, res) {
                 res.send(err);
 
             res.json({ message: 'User removed from bike!' });
+        });
+    });
+});
+router.route("/updateLocation/:bike_id").post(function (req, res) {
+    Bike.findByLockId(req.params.bike_id, function(err, bike) {
+        if (err){
+            helpers.handleError(err);
+            res.json({"error":"Something went wrong!"});
+            return;
+        }
+
+        if(!bike){
+            res.json({"error":"No bike found"});
+            return;
+        }
+
+        bike.LastLocation = req.body.LastLocation;
+
+        bike.save(function(err) {
+            if (err)
+                res.send(err);
+
+            require('../socket/sockets').bikeMoved(bike.LastLocation);
+            res.json({ message: 'Location updated!' });
         });
     });
 });

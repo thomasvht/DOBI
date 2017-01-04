@@ -54,5 +54,12 @@ app.get('/', function(req, res) {
     res.redirect('http://' + ipaddress + ":3000");
 });
 
-app.listen(port);
+//app.listen(port);
+let server = require('http').createServer(app);
+let io = require('socket.io')(server);
+
+server.listen(5000);
+
+require('./server/socket/sockets').init(io);
+
 console.log('The magic happens on port:', ipaddress + ':' + port);

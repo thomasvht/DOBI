@@ -21,7 +21,7 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.register = function () {
         var _this = this;
-        if (this.password != this.passwordRepeat) {
+        if (this.password !== this.passwordRepeat) {
             this.errorMessage = "Passwords are not the same!";
         }
         else {

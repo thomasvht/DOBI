@@ -1,6 +1,8 @@
 /**
  * Created by Sander Verkaemer on 19/12/2016.
  */
+"use strict";
+
 let mongoose     = require('mongoose');
 let Schema       = mongoose.Schema;
 

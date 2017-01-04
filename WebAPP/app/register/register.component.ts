@@ -25,7 +25,7 @@ export class RegisterComponent {
     constructor(private userService: UserService, private router: Router) {}
 
     register() {
-        if(this.password != this.passwordRepeat){
+        if(this.password !== this.passwordRepeat){
             this.errorMessage = "Passwords are not the same!";
         }else{
             let user : IUser = {

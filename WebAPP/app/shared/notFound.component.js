@@ -9,29 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by Sander Verkaemer on 08/12/2016.
+ * Created by Sander Verkaemer on 02/01/2017.
  */
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var IndexComponent = (function () {
-    function IndexComponent(router) {
+var notFoundComponent = (function () {
+    function notFoundComponent(router) {
         this.router = router;
     }
-    IndexComponent.prototype.dashboard = function () {
-        this.router.navigate(['/dashboard']);
+    notFoundComponent.prototype.return = function () {
+        this.router.navigate(['/']);
     };
-    IndexComponent.prototype.register = function () {
-        this.router.navigate(['/register']);
-    };
-    return IndexComponent;
+    return notFoundComponent;
 }());
-IndexComponent = __decorate([
+notFoundComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'index',
-        templateUrl: 'index.component.html'
+        selector: 'notFound',
+        template: "\n        <div class=\"col-lg-12 header-containter full\">\n            <!--<img src=\"../../images/notFound.jpg\" class=\"img-responsive header-img\">-->\n            <div class=\"caption post-content\">\n                <h1 class=\"header-title notFound-text\">Page not found!</h1>\n                <h3 (click)=\"return()\" class=\"notFound-link\">Go back to the homepage</h3>\n            </div>\n        </div>\n"
     }),
     __metadata("design:paramtypes", [router_1.Router])
-], IndexComponent);
-exports.IndexComponent = IndexComponent;
-//# sourceMappingURL=index.component.js.map
+], notFoundComponent);
+exports.notFoundComponent = notFoundComponent;
+//# sourceMappingURL=notFound.component.js.map

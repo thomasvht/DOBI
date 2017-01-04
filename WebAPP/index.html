@@ -18,16 +18,19 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-	<script src="systemjs.config.js"></script>
+	<script src="systemjs.config.min.js"></script>
 
-	<script>
+    <!-- Sockets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+
+    <script>
 		System.import('app').catch(function(err){ console.error(err); });
 	</script>
 </head>
 <body>
     <app-container>
         <div class="loader">
-            <img src="./images/loader.svg" alt="">
+            <img src="./images/loader.svg" alt="Loader">
         </div>
     </app-container>
     <script src="https://use.fontawesome.com/a4af298cbd.js"></script>

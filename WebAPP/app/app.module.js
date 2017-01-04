@@ -23,6 +23,7 @@ var index_component_1 = require("./index/index.component");
 var detail_component_1 = require("./detail/detail.component");
 var maintenance_component_1 = require("./maintenance/maintenance.component");
 var addUser_component_1 = require("./addUser/addUser.component");
+var notFound_component_1 = require("./shared/notFound.component");
 var dashboard_pipe_1 = require("./dashboard/dashboard.pipe");
 var detail_pipe_1 = require("./detail/detail.pipe");
 var user_service_1 = require("./shared/services/user.service");
@@ -49,6 +50,7 @@ AppModule = __decorate([
             detail_component_1.DetailComponent,
             maintenance_component_1.MaintenanceComponent,
             addUser_component_1.addUserComponent,
+            notFound_component_1.notFoundComponent,
             dashboard_pipe_1.MyFilterPipe,
             detail_pipe_1.SafePipe
         ],

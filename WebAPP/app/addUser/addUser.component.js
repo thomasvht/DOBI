@@ -24,7 +24,7 @@ var addUserComponent = (function () {
     addUserComponent.prototype.addUser = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
-            _this.id = params['id'];
+            _this.id = params["id"];
         });
         if (this.id && this.email) {
             this.dataService.addUser(this.id, this.email)
@@ -34,13 +34,13 @@ var addUserComponent = (function () {
                         _this.errorMessage = result.error;
                     }
                     else {
-                        _this.router.navigate(['/detail/' + _this.id]);
+                        _this.router.navigate(["/detail/" + _this.id]);
                     }
                 }
             });
         }
         else {
-            this.errorMessage = "All fields are required";
+            this.errorMessage = "All fields are required!";
         }
     };
     return addUserComponent;

@@ -1,6 +1,8 @@
 /**
  * Created by Sander Verkaemer on 19/12/2016.
  */
+"use strict";
+
 const router = require('express').Router();
 
 let User = require('../models/user.model'),

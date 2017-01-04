@@ -14,11 +14,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var UserService = (function () {
+    //private url:string = "http://localhost:5000";
     function UserService(http) {
         this.http = http;
         this.loggedIn = false;
-        //private url:string = "http://146.185.162.171:5000";
-        this.url = "http://localhost:5000";
+        this.url = "http://146.185.162.171:5000";
         this.loggedIn = !!localStorage.getItem('auth_token');
     }
     UserService.prototype.login = function (user) {

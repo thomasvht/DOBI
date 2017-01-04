@@ -20,13 +20,18 @@ export class DetailComponent implements OnInit{
     id:string;
     inMaintenance:boolean;
 
-    location:string;
-
-    url:string;
-
+    location:string = "";
+    url:string ="";
     maintenances: IMaintenance[];
 
+    socket:any = null;
+
     constructor(private dataService: DataService,private router: Router,private route: ActivatedRoute) {
+        this.socket = io('http://146.185.162.171:5000');
+        this.socket.on('BikeMoved', function(data:string){
+            this.location = data;
+            this.url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDIc_mfhGjEsnx-cKk7HglcHFGVCHL1x28&zoom=16&q="+this.location;
+        }.bind(this));
     }
 
     ngOnInit() {

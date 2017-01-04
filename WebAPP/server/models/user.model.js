@@ -1,6 +1,8 @@
 /**
  * Created by Sander Verkaemer on 17/12/2016.
  */
+"use strict";
+
 let bcrypt = require('bcrypt-nodejs');
 
 let mongoose     = require('mongoose');

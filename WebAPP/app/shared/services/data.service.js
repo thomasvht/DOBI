@@ -14,10 +14,10 @@ require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 var Rx_1 = require("rxjs/Rx");
 var DataService = (function () {
+    //private url:string = "http://localhost:5000/api";
     function DataService(http) {
         this.http = http;
-        //private url:string = "http://146.185.162.171:5000/api";
-        this.url = "http://localhost:5000/api";
+        this.url = "http://146.185.162.171:5000/api";
     }
     DataService.prototype.getBikesByOwner = function () {
         return this.http.get(this.url + '/bike/byOwner/' + ReadUserFromLocalStorage(), GenerateHeaders())

@@ -1,6 +1,8 @@
 /**
  * Created by Sander Verkaemer on 17/12/2016.
  */
+"use strict";
+
 const router = require('express').Router();
 let bikeRouter = require('./bike.router'),
     maintenanceRouter = require('./maintenance.router'),

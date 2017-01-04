@@ -19,6 +19,14 @@ var DetailComponent = (function () {
         this.dataService = dataService;
         this.router = router;
         this.route = route;
+        this.location = "";
+        this.url = "";
+        this.socket = null;
+        this.socket = io('http://146.185.162.171:5000');
+        this.socket.on('BikeMoved', function (data) {
+            this.location = data;
+            this.url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDIc_mfhGjEsnx-cKk7HglcHFGVCHL1x28&zoom=16&q=" + this.location;
+        }.bind(this));
     }
     DetailComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -9,8 +9,8 @@ import {IBike, IMaintenance} from '../interfaces';
 
 @Injectable()
 export class DataService {
-    //private url:string = "http://146.185.162.171:5000/api";
-    private url:string = "http://localhost:5000/api";
+    private url:string = "http://146.185.162.171:5000/api";
+    //private url:string = "http://localhost:5000/api";
     constructor (private http: Http) {}
 
     getBikesByOwner() : Observable<IBike[]>{

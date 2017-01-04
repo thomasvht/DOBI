@@ -4,10 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { newBikeComponent } from './newBike/newBike.component';
-import { IndexComponent } from './index/index.component'
+import { IndexComponent } from './index/index.component';
 import { DetailComponent } from './detail/detail.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { addUserComponent } from './addUser/addUser.component';
+import { notFoundComponent } from './shared/notFound.component';
 
 import { LoggedInGuard } from './shared/login-in.guard';
 
@@ -20,7 +21,9 @@ const app_routes: Routes = [
   { path: 'newBike', component: newBikeComponent, canActivate: [LoggedInGuard]},
   { path: 'detail/:id', component: DetailComponent, canActivate: [LoggedInGuard]},
   { path: 'maintenance/:id', component: MaintenanceComponent, canActivate: [LoggedInGuard]},
-  { path: 'addUser/:id', component: addUserComponent, canActivate: [LoggedInGuard]}
+  { path: 'addUser/:id', component: addUserComponent, canActivate: [LoggedInGuard]},
+
+  { component: notFoundComponent, path: "**" }
 
 ];
 

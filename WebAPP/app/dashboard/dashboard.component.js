@@ -21,7 +21,9 @@ var DashboardComponent = (function () {
         this.bikes = [];
         this.noUsers = 0;
         this.amountOfInMaintenance = 0;
+        this.socket = null;
         this.searchValue = "";
+        //this.socket = io('http://localhost:5000');
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -41,6 +43,9 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.getDetail = function (id) {
         this.router.navigate(['/detail/' + id]);
+    };
+    DashboardComponent.prototype.shootSocket = function () {
+        this.socket.emit('bid', "Socket Shooted!");
     };
     return DashboardComponent;
 }());

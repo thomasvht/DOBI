@@ -1,10 +1,10 @@
 /**
  * Created by Sander Verkaemer on 16/12/2016.
  */
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { DataService } from '../shared/services/data.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { DataService } from "../shared/services/data.service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
     templateUrl: 'addUser.component.html'
 })
 
-export class addUserComponent{
+export class addUserComponent {
     email:string;
     id:string;
 
@@ -21,25 +21,25 @@ export class addUserComponent{
     constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) {
     }
 
-    addUser(){
+    addUser() {
         this.route.params.subscribe(params => {
-            this.id = params['id'];
+            this.id = params["id"];
         });
 
-        if(this.id && this.email){
+        if(this.id && this.email) {
             this.dataService.addUser(this.id, this.email)
                 .subscribe((result: any) => {
                         if (result) {
-                            if(result.error){
+                            if (result.error) {
                                 this.errorMessage = result.error;
-                            }else {
-                                this.router.navigate(['/detail/'+this.id]);
+                            } else {
+                                this.router.navigate(["/detail/"+this.id]);
                             }
                         }
                     }
                 );
         }else {
-            this.errorMessage = "All fields are required";
+            this.errorMessage = "All fields are required!";
         }
 
 
